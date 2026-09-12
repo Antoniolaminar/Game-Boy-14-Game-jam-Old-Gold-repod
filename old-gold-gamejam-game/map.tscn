@@ -1,0 +1,67 @@
+[gd_scene format=4 uid="uid://dkfng1blv8163"]
+
+[ext_resource type="TileSet" uid="uid://dbpq6tvvm82nd" path="res://pinball_test_tile_set.tres" id="1_iw27f"]
+[ext_resource type="Script" uid="uid://b5lrxgchgtoge" path="res://ripper_control.gd" id="2_71pa8"]
+[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprite_leftflipper1.png" id="3_05x41"]
+[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprite_rightflipper1.png" id="4_gqbix"]
+[ext_resource type="Script" uid="uid://x8px38f0mjy2" path="res://ball_control.gd" id="5_oysan"]
+[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/Sprite_Ball1.png" id="6_sb2pt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yrln"]
+radius = 4.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cx6gv"]
+radius = 4.0
+height = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0yrln"]
+radius = 8.0
+
+[node name="Map" type="Node" unique_id=574883530]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=114334358]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAGAAcAAwABAAEAAAAEAAcAAwAAAAAAAAADAAcAAwABAAEAAAACAAcAAwADAAIAAAABAAcAAwAFAAAAAAAAAAcAAwAFAAAAAAAHAAcAAwADAAAAAAAIAAcAAwAFAAAAAAAJAAcAAwAFAAAAAAAFAAcAAwAAAAAAAAAAAAAAAwACAAEAAAAJAAAAAwADAAEAAAABAAAAAwAAAAEAAAACAAAAAwAAAAEAAAADAAAAAwAAAAEAAAAEAAAAAwAAAAEAAAAFAAAAAwAAAAEAAAAGAAAAAwAAAAEAAAAHAAAAAwAAAAIAAAAIAAAAAwAAAAEAAAAJAAEAAwACAAAAAAAJAAIAAwACAAAAAAAJAAMAAwACAAAAAAAJAAQAAwACAAAAAAAJAAUAAwADAAAAAAAJAAYAAwAFAAAAAAAAAAEAAwABAAAAAAAAAAIAAwABAAAAAAAAAAMAAwABAAAAAAAAAAQAAwABAAAAAAAAAAUAAwADAAIAAAAAAAYAAwAFAAAAAAABAAEAAwAAAAIAAAACAAEAAwAAAAAAAAADAAEAAwAAAAAAAAAEAAEAAwAAAAAAAAAFAAEAAwAAAAAAAAAGAAEAAwAAAAAAAAAHAAEAAwAAAAAAAAAIAAEAAwAAAAAAAAAIAAIAAwAAAAAAAAAHAAIAAwAAAAAAAAAGAAIAAwAAAAAAAAAFAAIAAwAAAAAAAAAEAAIAAwAAAAIAAAADAAIAAwAAAAAAAAACAAIAAwAAAAAAAAABAAIAAwAAAAAAAAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAHAAMAAwAAAAIAAAAIAAMAAwAAAAAAAAAIAAQAAwAAAAAAAAAHAAQAAwAAAAAAAAAGAAQAAwAAAAAAAAAFAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAADAAQAAwAAAAAAAAACAAQAAwAAAAAAAAABAAQAAwAAAAAAAAABAAUAAwAAAAAAAAACAAUAAwAAAAIAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAHAAUAAwAAAAIAAAAIAAUAAwAAAAAAAAAIAAYAAwADAAAAAAAHAAYAAwAAAAAAAAAGAAYAAwAAAAAAAAAFAAYAAwAAAAAAAAAEAAYAAwAAAAAAAAADAAYAAwAAAAAAAAACAAYAAwAAAAAAAAABAAYAAwADAAIAAAAFAAgAAwAEAAAAAAAEAAgAAwAEAAAAAAAAAAgAAwAEAAEAAAAJAAgAAwAEAAEAAAABAAgAAwAFAAAAAAACAAgAAwAFAAAAAAADAAgAAwAFAAAAAAAGAAgAAwAFAAAAAAAHAAgAAwAFAAAAAAAIAAgAAwAFAAAAAAA=")
+tile_set = ExtResource("1_iw27f")
+
+[node name="RipperControl" type="CharacterBody2D" parent="." unique_id=2001667029]
+motion_mode = 1
+script = ExtResource("2_71pa8")
+
+[node name="RipperArmLeft" type="Node2D" parent="RipperControl" unique_id=1374738467]
+
+[node name="CollisionRipperLeft" type="CollisionShape2D" parent="RipperControl/RipperArmLeft" unique_id=110721242]
+position = Vector2(60, 125)
+rotation = -1.2371962
+shape = SubResource("CapsuleShape2D_0yrln")
+
+[node name="SpriteRipperLeft" type="Sprite2D" parent="RipperControl/RipperArmLeft" unique_id=242861297]
+texture_filter = 1
+position = Vector2(59, 125)
+texture = ExtResource("3_05x41")
+
+[node name="RipperArmRight" type="Node2D" parent="RipperControl" unique_id=1238097868]
+position = Vector2(103, 127)
+
+[node name="CollisionRipperRight" type="CollisionShape2D" parent="RipperControl/RipperArmRight" unique_id=1572811560]
+position = Vector2(-4, -1)
+rotation = 1.3864576
+shape = SubResource("CapsuleShape2D_cx6gv")
+
+[node name="SpriteRipperRight" type="Sprite2D" parent="RipperControl/RipperArmRight" unique_id=115870174]
+texture_filter = 1
+position = Vector2(-3, -1)
+texture = ExtResource("4_gqbix")
+
+[node name="BallControl" type="CharacterBody2D" parent="." unique_id=1806026941]
+script = ExtResource("5_oysan")
+
+[node name="BallCollisionShape2D" type="CollisionShape2D" parent="BallControl" unique_id=1513256024]
+position = Vector2(73, 69)
+shape = SubResource("CircleShape2D_0yrln")
+
+[node name="BallSprite2D" type="Sprite2D" parent="BallControl" unique_id=24319728]
+texture_filter = 1
+position = Vector2(74, 68)
+texture = ExtResource("6_sb2pt")
