@@ -1,14 +1,57 @@
 [gd_scene format=3 uid="uid://dkfng1blv8163"]
 
+[ext_resource type="Script" uid="uid://dp0kqvna4ub2k" path="res://level_1_ocean.gd" id="1_05x41"]
 [ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/Background1.png" id="1_71pa8"]
 [ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/Walls1.png" id="2_05x41"]
 [ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprite_leftflipper1.png" id="3_05x41"]
 [ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprite_rightflipper1.png" id="4_gqbix"]
+[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="4_iw27f"]
+[ext_resource type="Script" uid="uid://y1o7jgrse5tt" path="res://right_flipper.gd" id="5_71pa8"]
 [ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/Sprite_Ball1.png" id="6_sb2pt"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0yrln"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0yrln"]
+a = Vector2(44, 128)
+b = Vector2(-1, 105)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cx6gv"]
+b = Vector2(-43, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yrln"]
+size = Vector2(55, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx6gv"]
+size = Vector2(56, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6mmj"]
+size = Vector2(8, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub8mp"]
+size = Vector2(8, 121)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yrln"]
+radius = 2.5
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cx6gv"]
+radius = 2.0
+height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st0ao"]
+size = Vector2(25.200405, 7.7948494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnl84"]
+size = Vector2(24.920607, 7.3419228)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05x41"]
+radius = 3.36
+height = 27.18
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71pa8"]
+radius = 3.36
+height = 27.184616
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o6mmj"]
+friction = 0.0
 bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cx6gv"]
@@ -16,59 +59,117 @@ radius = 8.0
 
 [node name="MainGame" type="Node" unique_id=574883530]
 
-[node name="Levels" type="Node" parent="." unique_id=118106884]
+[node name="Levels_System" type="Node" parent="." unique_id=118106884]
 
-[node name="Level1_Ocean" type="StaticBody2D" parent="Levels" unique_id=2097728355]
+[node name="Level1_Ocean" type="StaticBody2D" parent="Levels_System" unique_id=2097728355]
+script = ExtResource("1_05x41")
 
-[node name="BackGroundSprite" type="Sprite2D" parent="Levels/Level1_Ocean" unique_id=298641059]
+[node name="BackGroundSprite" type="Sprite2D" parent="Levels_System/Level1_Ocean" unique_id=298641059]
 texture_filter = 1
 position = Vector2(80, 72)
 texture = ExtResource("1_71pa8")
 
-[node name="WallsSprite" type="Sprite2D" parent="Levels/Level1_Ocean" unique_id=414235990]
+[node name="WallsSprite" type="Sprite2D" parent="Levels_System/Level1_Ocean" unique_id=414235990]
 texture_filter = 1
 position = Vector2(80, 72)
 texture = ExtResource("2_05x41")
 
-[node name="WorldBoundaryColl" type="CollisionShape2D" parent="Levels/Level1_Ocean" unique_id=626063228]
-position = Vector2(78, 145)
-shape = SubResource("WorldBoundaryShape2D_0yrln")
+[node name="WallCollisions_1" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=413390267]
+position = Vector2(6, 18)
+rotation = -0.01456245
+shape = SubResource("SegmentShape2D_0yrln")
 
-[node name="Objects" type="Node" parent="." unique_id=1526000305]
+[node name="WallCollisions_2" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=273275373]
+position = Vector2(153, 123.99999)
+rotation = 0.05339971
+shape = SubResource("SegmentShape2D_cx6gv")
 
-[node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
+[node name="WallCollisions_3" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=107477987]
+position = Vector2(28.5, 5)
+shape = SubResource("RectangleShape2D_0yrln")
+
+[node name="WallCollisions_4" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=1525063124]
+position = Vector2(132, 5)
+shape = SubResource("RectangleShape2D_cx6gv")
+
+[node name="WallCollisions_5" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=1247278120]
+position = Vector2(4, 68)
+shape = SubResource("RectangleShape2D_o6mmj")
+
+[node name="WallCollisions_6" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=1637216443]
+position = Vector2(156, 66.5)
+shape = SubResource("RectangleShape2D_ub8mp")
+
+[node name="WallCollisions_7" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=830069478]
+position = Vector2(27, 103)
+shape = SubResource("CapsuleShape2D_0yrln")
+
+[node name="WallCollisions_8" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=2073447926]
+position = Vector2(133, 102)
+shape = SubResource("CapsuleShape2D_cx6gv")
+
+[node name="WallCollisions_9" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=104291545]
+position = Vector2(38.08947, 116.618835)
+rotation = 0.42302987
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_st0ao")
+
+[node name="WallCollisions_10" type="CollisionShape2D" parent="Levels_System/Level1_Ocean" unique_id=1468647492]
+position = Vector2(123.060074, 116.13724)
+rotation = -0.3741676
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_dnl84")
+
+[node name="Objects" type="Node" parent="Levels_System" unique_id=1526000305]
+
+[node name="RipperControl" type="RigidBody2D" parent="Levels_System/Objects" unique_id=399619787]
+script = ExtResource("4_iw27f")
+
+[node name="LeftFlipper" type="RigidBody2D" parent="Levels_System/Objects/RipperControl" unique_id=298857411]
+position = Vector2(43, 118)
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+
+[node name="LFlipperSprite" type="Sprite2D" parent="Levels_System/Objects/RipperControl/LeftFlipper" unique_id=784716824]
+texture_filter = 1
+position = Vector2(14, 6)
+texture = ExtResource("3_05x41")
+
+[node name="LFlipperCollision" type="CollisionShape2D" parent="Levels_System/Objects/RipperControl/LeftFlipper" unique_id=1733927101]
+position = Vector2(15, 6)
+rotation = 1.9565141
+shape = SubResource("CapsuleShape2D_05x41")
+
+[node name="RightFlipper" type="RigidBody2D" parent="Levels_System/Objects/RipperControl" unique_id=816567941]
+position = Vector2(118, 118)
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+script = ExtResource("5_71pa8")
+
+[node name="RFlipperSprite" type="Sprite2D" parent="Levels_System/Objects/RipperControl/RightFlipper" unique_id=1914170928]
+texture_filter = 1
+position = Vector2(-14, 6)
+texture = ExtResource("4_gqbix")
+
+[node name="RFlipperCollision" type="CollisionShape2D" parent="Levels_System/Objects/RipperControl/RightFlipper" unique_id=1113150066]
+position = Vector2(-15, 6)
+rotation = -1.9565141
+shape = SubResource("CapsuleShape2D_71pa8")
+
+[node name="BallObject" type="RigidBody2D" parent="Levels_System/Objects" unique_id=203956231]
+position = Vector2(18, -2)
 physics_material_override = SubResource("PhysicsMaterial_o6mmj")
 lock_rotation = true
 
-[node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
+[node name="BallSprite" type="Sprite2D" parent="Levels_System/Objects/BallObject" unique_id=22759566]
 texture_filter = 1
 position = Vector2(78, 51)
 texture = ExtResource("6_sb2pt")
 
-[node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
+[node name="BallCollision" type="CollisionShape2D" parent="Levels_System/Objects/BallObject" unique_id=1378425564]
 position = Vector2(78, 51)
 shape = SubResource("CircleShape2D_cx6gv")
 
-[node name="RightFlipper" type="RigidBody2D" parent="Objects" unique_id=816567941]
-gravity_scale = 0.0
-freeze = true
-freeze_mode = 1
-
-[node name="RFlipperSprite" type="Sprite2D" parent="Objects/RightFlipper" unique_id=1914170928]
-texture_filter = 1
-position = Vector2(104, 124)
-texture = ExtResource("4_gqbix")
-
-[node name="RFlipperCollision" type="CollisionShape2D" parent="Objects/RightFlipper" unique_id=1113150066]
-
-[node name="LeftFlipper" type="RigidBody2D" parent="Objects" unique_id=298857411]
-gravity_scale = 0.0
-freeze = true
-freeze_mode = 1
-
-[node name="LFlipperSprite" type="Sprite2D" parent="Objects/LeftFlipper" unique_id=784716824]
-texture_filter = 1
-position = Vector2(56, 124)
-texture = ExtResource("3_05x41")
-
-[node name="LFlipperCollision" type="CollisionShape2D" parent="Objects/LeftFlipper" unique_id=1733927101]
+[node name="LevelManager" type="Node" parent="Levels_System" unique_id=1078101632]
