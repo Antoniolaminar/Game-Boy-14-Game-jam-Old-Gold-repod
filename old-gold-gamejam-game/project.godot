@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=160
 window/size/viewport_height=144
-window/stretch/mode="viewport"
+window/size/borderless=true
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 
