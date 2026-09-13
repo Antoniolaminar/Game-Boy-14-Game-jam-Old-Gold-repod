@@ -1,9 +1,10 @@
 [gd_resource type="TileSet" format=3 uid="uid://dbpq6tvvm82nd"]
 
-[ext_resource type="Texture2D" uid="uid://e2iq48dg1ayk" path="res://assets/pplaceholder4.png" id="1_2061e"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_feaeg"]
+load_path = "res://.godot/imported/pplaceholder4.png-47ed64e895f7d89d2ae9c8ee93026feb.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3bp70"]
-texture = ExtResource("1_2061e")
+texture = SubResource("CompressedTexture2D_feaeg")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.956892, -8, -3.5971746, 8, -8, 8)

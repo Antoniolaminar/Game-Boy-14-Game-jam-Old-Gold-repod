@@ -1,71 +1,74 @@
-[gd_scene format=4 uid="uid://dkfng1blv8163"]
+[gd_scene format=3 uid="uid://dkfng1blv8163"]
 
-[ext_resource type="TileSet" uid="uid://dbpq6tvvm82nd" path="res://pinball_test_tile_set.tres" id="1_iw27f"]
-[ext_resource type="Script" uid="uid://b5lrxgchgtoge" path="res://ripper_control.gd" id="2_71pa8"]
+[ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/Background1.png" id="1_71pa8"]
+[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/Walls1.png" id="2_05x41"]
 [ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprite_leftflipper1.png" id="3_05x41"]
 [ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprite_rightflipper1.png" id="4_gqbix"]
-[ext_resource type="Script" uid="uid://x8px38f0mjy2" path="res://ball_control.gd" id="5_oysan"]
 [ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/Sprite_Ball1.png" id="6_sb2pt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yrln"]
-radius = 4.0
-height = 32.0
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0yrln"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cx6gv"]
-radius = 4.0
-height = 32.0
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o6mmj"]
+bounce = 0.4
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0yrln"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cx6gv"]
 radius = 8.0
 
-[node name="Map" type="Node" unique_id=574883530]
+[node name="MainGame" type="Node" unique_id=574883530]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=114334358]
+[node name="Levels" type="Node" parent="." unique_id=118106884]
+
+[node name="Level1_Ocean" type="StaticBody2D" parent="Levels" unique_id=2097728355]
+
+[node name="BackGroundSprite" type="Sprite2D" parent="Levels/Level1_Ocean" unique_id=298641059]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAGAAcAAwAAAAAAAAAEAAcAAwAAAAAAAAADAAcAAwAAAAAAAAACAAcAAwADAAIAAAABAAcAAwAFAAAAAAAAAAcAAwAFAAAAAAAHAAcAAwADAAAAAAAIAAcAAwAFAAAAAAAJAAcAAwAFAAAAAAAFAAcAAwAAAAAAAAAAAAAAAwACAAEAAAAJAAAAAwADAAEAAAABAAAAAwAAAAEAAAACAAAAAwAAAAEAAAADAAAAAwAAAAEAAAAEAAAAAwAAAAEAAAAFAAAAAwAAAAEAAAAGAAAAAwAAAAEAAAAHAAAAAwAAAAIAAAAIAAAAAwAAAAEAAAAJAAEAAwACAAAAAAAJAAIAAwACAAAAAAAJAAMAAwACAAAAAAAJAAQAAwACAAAAAAAJAAUAAwADAAAAAAAJAAYAAwAFAAAAAAAAAAEAAwABAAAAAAAAAAIAAwABAAAAAAAAAAMAAwABAAAAAAAAAAQAAwABAAAAAAAAAAUAAwADAAIAAAAAAAYAAwAFAAAAAAABAAEAAwAAAAIAAAACAAEAAwAAAAAAAAADAAEAAwAAAAAAAAAEAAEAAwAAAAAAAAAFAAEAAwAAAAAAAAAGAAEAAwAAAAAAAAAHAAEAAwAAAAAAAAAIAAEAAwAAAAAAAAAIAAIAAwAAAAAAAAAHAAIAAwAAAAAAAAAGAAIAAwAAAAAAAAAFAAIAAwAAAAAAAAAEAAIAAwAAAAIAAAADAAIAAwAAAAAAAAACAAIAAwAAAAAAAAABAAIAAwAAAAAAAAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAHAAMAAwAAAAIAAAAIAAMAAwAAAAAAAAAIAAQAAwAAAAAAAAAHAAQAAwAAAAAAAAAGAAQAAwAAAAAAAAAFAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAADAAQAAwAAAAAAAAACAAQAAwAAAAAAAAABAAQAAwAAAAAAAAABAAUAAwAAAAAAAAACAAUAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAHAAUAAwAAAAAAAAAIAAUAAwAAAAAAAAAIAAYAAwADAAAAAAAHAAYAAwAAAAAAAAAGAAYAAwAAAAAAAAAFAAYAAwAAAAAAAAAEAAYAAwAAAAAAAAADAAYAAwAAAAAAAAACAAYAAwAAAAAAAAABAAYAAwADAAIAAAAFAAgAAwAEAAAAAAAEAAgAAwAEAAAAAAAAAAgAAwAEAAEAAAAJAAgAAwAEAAEAAAABAAgAAwAFAAAAAAACAAgAAwAFAAAAAAADAAgAAwADAAIAAAAGAAgAAwADAAAAAAAHAAgAAwAFAAAAAAAIAAgAAwAFAAAAAAA=")
-tile_set = ExtResource("1_iw27f")
+position = Vector2(80, 72)
+texture = ExtResource("1_71pa8")
 
-[node name="RipperControl" type="CharacterBody2D" parent="." unique_id=2001667029]
-motion_mode = 1
-script = ExtResource("2_71pa8")
-
-[node name="RipperArmLeft" type="Node2D" parent="RipperControl" unique_id=1374738467]
-position = Vector2(2, 1)
-
-[node name="CollisionRipperLeft" type="CollisionShape2D" parent="RipperControl/RipperArmLeft" unique_id=110721242]
-position = Vector2(53.999996, 133)
-rotation = -1.2371962
-shape = SubResource("CapsuleShape2D_0yrln")
-
-[node name="SpriteRipperLeft" type="Sprite2D" parent="RipperControl/RipperArmLeft" unique_id=242861297]
+[node name="WallsSprite" type="Sprite2D" parent="Levels/Level1_Ocean" unique_id=414235990]
 texture_filter = 1
-position = Vector2(54, 133)
-texture = ExtResource("3_05x41")
+position = Vector2(80, 72)
+texture = ExtResource("2_05x41")
 
-[node name="RipperArmRight" type="Node2D" parent="RipperControl" unique_id=1238097868]
-position = Vector2(103, 127)
+[node name="WorldBoundaryColl" type="CollisionShape2D" parent="Levels/Level1_Ocean" unique_id=626063228]
+position = Vector2(78, 145)
+shape = SubResource("WorldBoundaryShape2D_0yrln")
 
-[node name="CollisionRipperRight" type="CollisionShape2D" parent="RipperControl/RipperArmRight" unique_id=1572811560]
-position = Vector2(1, 7)
-rotation = 1.3864576
-shape = SubResource("CapsuleShape2D_cx6gv")
+[node name="Objects" type="Node" parent="." unique_id=1526000305]
 
-[node name="SpriteRipperRight" type="Sprite2D" parent="RipperControl/RipperArmRight" unique_id=115870174]
+[node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
+physics_material_override = SubResource("PhysicsMaterial_o6mmj")
+lock_rotation = true
+
+[node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
 texture_filter = 1
-position = Vector2(1, 7)
+position = Vector2(78, 51)
+texture = ExtResource("6_sb2pt")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
+position = Vector2(78, 51)
+shape = SubResource("CircleShape2D_cx6gv")
+
+[node name="RightFlipper" type="RigidBody2D" parent="Objects" unique_id=816567941]
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+
+[node name="RFlipperSprite" type="Sprite2D" parent="Objects/RightFlipper" unique_id=1914170928]
+texture_filter = 1
+position = Vector2(104, 124)
 texture = ExtResource("4_gqbix")
 
-[node name="BallControl" type="CharacterBody2D" parent="." unique_id=1806026941]
-position = Vector2(71, -34)
-floor_stop_on_slope = false
-floor_max_angle = 0.43633232
-script = ExtResource("5_oysan")
+[node name="RFlipperCollision" type="CollisionShape2D" parent="Objects/RightFlipper" unique_id=1113150066]
 
-[node name="BallCollisionShape2D" type="CollisionShape2D" parent="BallControl" unique_id=1513256024]
-position = Vector2(73, 69)
-shape = SubResource("CircleShape2D_0yrln")
+[node name="LeftFlipper" type="RigidBody2D" parent="Objects" unique_id=298857411]
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
 
-[node name="BallSprite2D" type="Sprite2D" parent="BallControl" unique_id=24319728]
+[node name="LFlipperSprite" type="Sprite2D" parent="Objects/LeftFlipper" unique_id=784716824]
 texture_filter = 1
-position = Vector2(74, 68)
-texture = ExtResource("6_sb2pt")
+position = Vector2(56, 124)
+texture = ExtResource("3_05x41")
+
+[node name="LFlipperCollision" type="CollisionShape2D" parent="Objects/LeftFlipper" unique_id=1733927101]
