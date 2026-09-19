@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh6ix77yv8uj7"
-path="res://.godot/imported/sprite_rightflipper1.png-f2c20e21b21e03b31f1bae61a7bbc090.ctex"
+uid="uid://cqkty0h85pb6r"
+path="res://.godot/imported/Background1.png-4536f2b201967033c3c70c4f6968281d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_rightflipper1.png"
-dest_files=["res://.godot/imported/sprite_rightflipper1.png-f2c20e21b21e03b31f1bae61a7bbc090.ctex"]
+source_file="res://assets/sprites/Background1.png"
+dest_files=["res://.godot/imported/Background1.png-4536f2b201967033c3c70c4f6968281d.ctex"]
 
 [params]
 

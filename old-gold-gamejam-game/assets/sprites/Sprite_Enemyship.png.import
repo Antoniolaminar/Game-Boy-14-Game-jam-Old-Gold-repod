@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diqhp8jdpr3n2"
-path="res://.godot/imported/Sprite_leftbumper1.png-f4ca4c30dd9139f3cae38641896102f8.ctex"
+uid="uid://rkq86bre1flu"
+path="res://.godot/imported/Sprite_Enemyship.png-6384cd5075b7f403e2b12f1b03e0ada9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite_leftbumper1.png"
-dest_files=["res://.godot/imported/Sprite_leftbumper1.png-f4ca4c30dd9139f3cae38641896102f8.ctex"]
+source_file="res://assets/sprites/Sprite_Enemyship.png"
+dest_files=["res://.godot/imported/Sprite_Enemyship.png-6384cd5075b7f403e2b12f1b03e0ada9.ctex"]
 
 [params]
 

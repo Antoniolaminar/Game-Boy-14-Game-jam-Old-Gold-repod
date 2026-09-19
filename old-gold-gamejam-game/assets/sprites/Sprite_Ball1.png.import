@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cakwvo8ekvtyw"
-path="res://.godot/imported/sprite_rightbumper1.png-f31d4f6428d2deda8b235c1daa3ce793.ctex"
+uid="uid://cvb2pwowyv25y"
+path="res://.godot/imported/Sprite_Ball1.png-098a9f43935f68299a13707fada15bb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_rightbumper1.png"
-dest_files=["res://.godot/imported/sprite_rightbumper1.png-f31d4f6428d2deda8b235c1daa3ce793.ctex"]
+source_file="res://assets/sprites/Sprite_Ball1.png"
+dest_files=["res://.godot/imported/Sprite_Ball1.png-098a9f43935f68299a13707fada15bb8.ctex"]
 
 [params]
 

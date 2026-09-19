@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rkq86bre1flu"
-path="res://.godot/imported/Sprite_Enemyship.png-7860734aa3d5e0cf5812882578a4414f.ctex"
+uid="uid://c6sgm2ie0n5yt"
+path="res://.godot/imported/sprite_leftflipper1.png-f769bd2c3bd69965defbc9bd79c36e60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite_Enemyship.png"
-dest_files=["res://.godot/imported/Sprite_Enemyship.png-7860734aa3d5e0cf5812882578a4414f.ctex"]
+source_file="res://assets/sprites/sprite_leftflipper1.png"
+dest_files=["res://.godot/imported/sprite_leftflipper1.png-f769bd2c3bd69965defbc9bd79c36e60.ctex"]
 
 [params]
 

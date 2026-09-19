@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://dkfng1blv8163"]
 
-[ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/Background1.png" id="1_71pa8"]
-[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/Walls1.png" id="2_05x41"]
-[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprite_leftflipper1.png" id="3_05x41"]
-[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprite_rightflipper1.png" id="4_gqbix"]
+[ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/sprites/Background1.png" id="1_71pa8"]
+[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/sprites/Walls1.png" id="2_05x41"]
+[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprites/sprite_leftflipper1.png" id="3_05x41"]
+[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprites/sprite_rightflipper1.png" id="4_gqbix"]
 [ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="4_iw27f"]
-[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/Sprite_Ball1.png" id="6_sb2pt"]
-[ext_resource type="Texture2D" uid="uid://diqhp8jdpr3n2" path="res://assets/Sprite_leftbumper1.png" id="9_oysan"]
-[ext_resource type="Texture2D" uid="uid://cakwvo8ekvtyw" path="res://assets/sprite_rightbumper1.png" id="10_sb2pt"]
+[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://ball_object.gd" id="6_0t07s"]
+[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/sprites/Sprite_Ball1.png" id="6_sb2pt"]
+[ext_resource type="Script" uid="uid://pg87yejj0ntq" path="res://bumper.gd" id="7_gqbix"]
+[ext_resource type="Texture2D" uid="uid://diqhp8jdpr3n2" path="res://assets/sprites/Sprite_leftbumper1.png" id="9_oysan"]
+[ext_resource type="Script" uid="uid://cetv3qamqobdv" path="res://death_zone.gd" id="10_oysan"]
+[ext_resource type="Texture2D" uid="uid://cakwvo8ekvtyw" path="res://assets/sprites/sprite_rightbumper1.png" id="10_sb2pt"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0yrln"]
 a = Vector2(44, 128)
@@ -56,7 +59,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 "
 
@@ -72,165 +75,190 @@ bounce = 0.4
 radius = 8.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0yrln"]
+bounce = 6.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6mmj"]
 radius = 1.55
 height = 14.05
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gqbix"]
+bounce = 6.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6dvry"]
 radius = 1.65
 height = 14.3
 
-[node name="MainGame" type="Node" unique_id=574883530]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb2pt"]
+size = Vector2(128, 26)
 
-[node name="Levels_System" type="Node" parent="." unique_id=118106884]
+[node name="Level" type="Node" unique_id=574883530]
 
-[node name="Level1_OceanWalls" type="StaticBody2D" parent="Levels_System" unique_id=1751367213]
+[node name="LevelSolids" type="Node" parent="." unique_id=118106884]
 
-[node name="BackGroundSprite" type="Sprite2D" parent="Levels_System/Level1_OceanWalls" unique_id=298641059]
+[node name="Level1_OceanWalls" type="StaticBody2D" parent="LevelSolids" unique_id=1751367213]
+
+[node name="BackGroundSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=298641059]
 texture_filter = 1
 position = Vector2(80, 72)
 texture = ExtResource("1_71pa8")
 
-[node name="WallsSprite" type="Sprite2D" parent="Levels_System/Level1_OceanWalls" unique_id=414235990]
+[node name="WallsSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=414235990]
 texture_filter = 1
 position = Vector2(80, 72)
 texture = ExtResource("2_05x41")
 
-[node name="WallCollisions_1" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=413390267]
+[node name="WallCollisions_1" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=413390267]
 position = Vector2(6, 18)
 rotation = -0.01456245
 shape = SubResource("SegmentShape2D_0yrln")
 
-[node name="WallCollisions_2" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=273275373]
+[node name="WallCollisions_2" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=273275373]
 position = Vector2(153, 123.99999)
 rotation = 0.05339971
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("SegmentShape2D_cx6gv")
 
-[node name="WallCollisions_3" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=107477987]
+[node name="WallCollisions_3" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=107477987]
 position = Vector2(28.5, 5)
 shape = SubResource("RectangleShape2D_0yrln")
 
-[node name="WallCollisions_4" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=1525063124]
+[node name="WallCollisions_4" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1525063124]
 position = Vector2(132, 5)
 shape = SubResource("RectangleShape2D_cx6gv")
 
-[node name="WallCollisions_5" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=1247278120]
+[node name="WallCollisions_5" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1247278120]
 position = Vector2(4, 68)
 shape = SubResource("RectangleShape2D_o6mmj")
 
-[node name="WallCollisions_6" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=1637216443]
+[node name="WallCollisions_6" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1637216443]
 position = Vector2(156, 66.5)
 shape = SubResource("RectangleShape2D_ub8mp")
 
-[node name="WallCollisions_7" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=830069478]
+[node name="WallCollisions_7" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=830069478]
 position = Vector2(27, 100)
 shape = SubResource("CapsuleShape2D_0yrln")
 
-[node name="WallCollisions_8" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=2073447926]
+[node name="WallCollisions_8" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=2073447926]
 position = Vector2(133, 102)
 shape = SubResource("CapsuleShape2D_cx6gv")
 
-[node name="WallCollisions_9" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=104291545]
+[node name="WallCollisions_9" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=104291545]
 position = Vector2(36.999992, 114.99999)
 rotation = 0.43745753
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_st0ao")
 
-[node name="WallCollisions_10" type="CollisionShape2D" parent="Levels_System/Level1_OceanWalls" unique_id=1468647492]
+[node name="WallCollisions_10" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1468647492]
 position = Vector2(121.00001, 117)
 rotation = -0.49378046
 scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("RectangleShape2D_dnl84")
 
-[node name="Objects" type="Node" parent="Levels_System" unique_id=1526000305]
+[node name="Objects" type="Node" parent="." unique_id=1526000305]
 
-[node name="RipperControl" type="RigidBody2D" parent="Levels_System/Objects" unique_id=399619787]
+[node name="RipperControl" type="RigidBody2D" parent="Objects" unique_id=399619787]
 script = ExtResource("4_iw27f")
 
-[node name="LeftFlipper" type="RigidBody2D" parent="Levels_System/Objects/RipperControl" unique_id=298857411]
+[node name="LeftFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=298857411]
 position = Vector2(43, 118)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
 
-[node name="LFlipperSprite" type="Sprite2D" parent="Levels_System/Objects/RipperControl/LeftFlipper" unique_id=784716824]
+[node name="LFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/LeftFlipper" unique_id=784716824]
 texture_filter = 1
 position = Vector2(14, 6)
 texture = ExtResource("3_05x41")
 
-[node name="LFlipperCollision" type="CollisionShape2D" parent="Levels_System/Objects/RipperControl/LeftFlipper" unique_id=1733927101]
+[node name="LFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/LeftFlipper" unique_id=1733927101]
 position = Vector2(15, 6)
 rotation = 1.9565141
 shape = SubResource("CapsuleShape2D_05x41")
 
-[node name="RightFlipper" type="RigidBody2D" parent="Levels_System/Objects/RipperControl" unique_id=816567941]
+[node name="RightFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=816567941]
 position = Vector2(118, 118)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
 script = SubResource("GDScript_gqbix")
 
-[node name="RFlipperSprite" type="Sprite2D" parent="Levels_System/Objects/RipperControl/RightFlipper" unique_id=1914170928]
+[node name="RFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/RightFlipper" unique_id=1914170928]
 texture_filter = 1
 position = Vector2(-14, 6)
 texture = ExtResource("4_gqbix")
 
-[node name="RFlipperCollision" type="CollisionShape2D" parent="Levels_System/Objects/RipperControl/RightFlipper" unique_id=1113150066]
+[node name="RFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/RightFlipper" unique_id=1113150066]
 position = Vector2(-15, 6)
 rotation = -1.9565141
 shape = SubResource("CapsuleShape2D_71pa8")
 
-[node name="BallObject" type="RigidBody2D" parent="Levels_System/Objects" unique_id=203956231]
-position = Vector2(124, 65)
+[node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
+position = Vector2(102, 85)
+collision_layer = 3
+collision_mask = 3
 mass = 7.892
 physics_material_override = SubResource("PhysicsMaterial_o6mmj")
 gravity_scale = 0.3
 lock_rotation = true
+script = ExtResource("6_0t07s")
 
-[node name="BallSprite" type="Sprite2D" parent="Levels_System/Objects/BallObject" unique_id=22759566]
+[node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
 texture_filter = 1
 position = Vector2(0, 1)
 texture = ExtResource("6_sb2pt")
 
-[node name="BallCollision" type="CollisionShape2D" parent="Levels_System/Objects/BallObject" unique_id=1378425564]
+[node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cx6gv")
 
-[node name="BumperLeft" type="RigidBody2D" parent="Levels_System/Objects" unique_id=1549031732]
+[node name="BumperLeft" type="RigidBody2D" parent="Objects" unique_id=1549031732 node_paths=PackedStringArray("hitbox_area_left", "hitbox_area_right")]
 position = Vector2(51, 95)
+collision_layer = 9
 physics_material_override = SubResource("PhysicsMaterial_0yrln")
 gravity_scale = -8.0
 freeze = true
+script = ExtResource("7_gqbix")
+hitbox_area_left = NodePath("LBumperHitbox")
+hitbox_area_right = NodePath("../BumperRight/RBumperHitBox")
 
-[node name="LBumperSprite" type="Sprite2D" parent="Levels_System/Objects/BumperLeft" unique_id=1828401874]
+[node name="LBumperSprite" type="Sprite2D" parent="Objects/BumperLeft" unique_id=1828401874]
 texture_filter = 1
 texture = ExtResource("9_oysan")
 
-[node name="LBumperCollision" type="CollisionPolygon2D" parent="Levels_System/Objects/BumperLeft" unique_id=2094037886]
+[node name="LBumperCollision" type="CollisionPolygon2D" parent="Objects/BumperLeft" unique_id=2094037886]
 polygon = PackedVector2Array(5.13, 7.235, -4.64, -7.545, -5.355, 2.67)
 
-[node name="LBumperHitbox" type="CollisionShape2D" parent="Levels_System/Objects/BumperLeft" unique_id=46297830]
+[node name="LBumperHitbox" type="CollisionShape2D" parent="Objects/BumperLeft" unique_id=46297830]
 position = Vector2(1, 0)
 rotation = -0.61918443
 shape = SubResource("CapsuleShape2D_o6mmj")
 
-[node name="BumperRight" type="RigidBody2D" parent="Levels_System/Objects" unique_id=1898477099]
+[node name="BumperRight" type="RigidBody2D" parent="Objects" unique_id=1898477099]
 position = Vector2(110, 95)
+collision_layer = 9
+physics_material_override = SubResource("PhysicsMaterial_gqbix")
 lock_rotation = true
 freeze = true
 
-[node name="RBumperSprite" type="Sprite2D" parent="Levels_System/Objects/BumperRight" unique_id=1964946791]
+[node name="RBumperSprite" type="Sprite2D" parent="Objects/BumperRight" unique_id=1964946791]
 texture_filter = 1
 texture = ExtResource("10_sb2pt")
 
-[node name="RBumperHitBox" type="CollisionShape2D" parent="Levels_System/Objects/BumperRight" unique_id=1495037465]
+[node name="RBumperHitBox" type="CollisionShape2D" parent="Objects/BumperRight" unique_id=1495037465]
 position = Vector2(-1, 0)
 rotation = -2.5443997
 shape = SubResource("CapsuleShape2D_6dvry")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Levels_System/Objects/BumperRight" unique_id=2020217376]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Objects/BumperRight" unique_id=2020217376]
 polygon = PackedVector2Array(4.3, -7.35, -5.13, 7.61, 4.815, 2.465)
 
-[node name="LevelManager" type="Node" parent="Levels_System" unique_id=1078101632]
+[node name="DeathZone" type="Area2D" parent="." unique_id=980725062]
+script = ExtResource("10_oysan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=867956645]
+position = Vector2(82, 163)
+shape = SubResource("RectangleShape2D_sb2pt")
+debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
+
+[connection signal="body_entered" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_entered"]
+[connection signal="body_exited" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_exited"]
