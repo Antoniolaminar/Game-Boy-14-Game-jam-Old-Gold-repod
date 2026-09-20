@@ -10,7 +10,6 @@ size = Vector2(39, 25)
 
 [node name="PirateShip" type="Area2D" unique_id=591132309]
 position = Vector2(76, 78)
-scale = Vector2(0.7, 0.7)
 script = ExtResource("1_ydudr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=100004146]

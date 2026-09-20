@@ -1,6 +1,7 @@
 extends RigidBody2D
 @export var rotation_right_value = 0
 @export var rotation_left_value = 0
+var free_ball = true
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	#action input do flipper direito
-	if Input.is_action_pressed("Flipper_Action_Right"):
+	if (Input.is_action_pressed("Flipper_Action_Right") && free_ball):
 		#Action de fazer o flipper levantar com threshold para poder ou nao
 		#conduzir o input (segundo elif) @requires rotaion_right_value != null
 		if rotation_right_value > 30:
@@ -25,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		elif rotation_right_value <= 0:
 			rotation_right_value = 0
 	
-	if Input.is_action_pressed("Flipper_Action_Left"):
+	if (Input.is_action_pressed("Flipper_Action_Left") && free_ball):
 		if rotation_left_value < -30:
 			rotation_left_value -= 500 * delta
 		elif rotation_left_value >= -30:

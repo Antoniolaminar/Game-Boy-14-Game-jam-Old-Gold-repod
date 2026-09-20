@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cx6gv"]
 radius = 17.029387
 
-[node name="Cannon" type="StaticBody2D" unique_id=1524108360]
+[node name="Cannon" type="Node2D" unique_id=1338444414]
 position = Vector2(79, 77)
 script = ExtResource("1_23j6s")
 
@@ -15,4 +15,5 @@ position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_cx6gv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1410563531]
+texture_filter = 1
 texture = ExtResource("2_72ky0")
