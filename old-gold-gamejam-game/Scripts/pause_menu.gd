@@ -2,7 +2,7 @@ extends Control
 
 var root_window : Window
 var is_on_level := true
-var is_paused := false
+var is_paused := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

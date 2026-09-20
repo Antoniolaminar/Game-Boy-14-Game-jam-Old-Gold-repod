@@ -24,3 +24,6 @@ func _load_next_level() -> void:
 		next_level_path = ".".join(split_path)
 		
 	get_tree().change_scene_to_file((next_level_path))
+
+func _load_level(path:String):
+	get_tree().change_scene_to_file((path))

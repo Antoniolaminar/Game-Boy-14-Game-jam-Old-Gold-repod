@@ -16,6 +16,8 @@ height = 30.457481
 
 [node name="RipperControl" type="RigidBody2D" parent="." unique_id=822559653]
 script = ExtResource("1_dysie")
+rotation_right_value = null
+rotation_left_value = null
 
 [node name="LeftFlipper" type="RigidBody2D" parent="RipperControl" unique_id=1880310016]
 position = Vector2(43, 118)

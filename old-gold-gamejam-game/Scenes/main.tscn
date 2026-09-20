@@ -1,5 +1,14 @@
 [gd_scene format=3 uid="uid://dilyvftwqvmrm"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0yrln"]
+
 [node name="Main" type="Control" unique_id=1589660884]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Label" type="Label" parent="." unique_id=1205891328]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Treasure Hunt Pirate Pinball Adventure"
+label_settings = SubResource("LabelSettings_0yrln")

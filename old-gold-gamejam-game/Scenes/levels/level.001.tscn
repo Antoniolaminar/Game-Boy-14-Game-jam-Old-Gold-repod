@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://qli2sunudjfr" path="res://Scripts/level.gd" id="1_buafm"]
 [ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/level1Assets/Background1.png" id="2_eokee"]
+[ext_resource type="PackedScene" uid="uid://cjfbjtyycfel6" path="res://Scenes/enemy_boat.tscn" id="3_eokee"]
 [ext_resource type="Script" uid="uid://rcunbeviglku" path="res://Scripts/ball_object.gd" id="3_vrmbg"]
+[ext_resource type="PackedScene" uid="uid://dj27e7fm3evex" path="res://Scenes/tiny_enemy_boat.tscn" id="4_dpw0m"]
 [ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/level1Assets/Sprite_Ball1.png" id="4_luvnn"]
 [ext_resource type="PackedScene" uid="uid://bgcq7yyd7jp53" path="res://Scenes/bumpers.tscn" id="5_3f3r5"]
-[ext_resource type="PackedScene" uid="uid://cvvy4ov16rfpc" path="res://Scenes/pirate_ship.tscn" id="6_bavps"]
-[ext_resource type="Script" uid="uid://br0sorsk4lwjr" path="res://Scripts/pirate_ship.gd" id="7_2eohi"]
-[ext_resource type="Texture2D" uid="uid://rkq86bre1flu" path="res://assets/level1Assets/Sprite_Enemyship.png" id="8_kufru"]
+[ext_resource type="FontFile" uid="uid://dehskx6ywim5u" path="res://Early GameBoy.ttf" id="7_buafm"]
 [ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/level1Assets/Walls1.png" id="9_vrl3m"]
 [ext_resource type="PackedScene" uid="uid://dowqc3b2k1y7w" path="res://Scenes/cannon.tscn" id="10_hqt7a"]
 [ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://Scripts/flipper_control.gd" id="11_4hmf5"]
@@ -61,15 +61,9 @@ bounce = 0.1
 [sub_resource type="CircleShape2D" id="CircleShape2D_cx6gv"]
 radius = 8.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_niyu1"]
-size = Vector2(39.000015, 27.000008)
-
-[sub_resource type="Curve2D" id="Curve2D_me8p6"]
-bake_interval = 4.0
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -88, -2, 0, 0, 0, 0, -171, -20, 0, 0, 0, 0, -239, 0, 0, 0, 0, 0, -317, -22, 0, 0, 0, 0, -387, -4, 0, 0, 0, 0, -453, -22, 0, 0, 0, 0, -563, -12)
-}
-point_count = 7
+[sub_resource type="LabelSettings" id="LabelSettings_eokee"]
+font = ExtResource("7_buafm")
+font_size = 6
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05x41"]
 radius = 4.082344
@@ -170,6 +164,21 @@ shape = SubResource("RectangleShape2D_dnl84")
 
 [node name="Objects" type="Node" parent="." unique_id=1526000305]
 
+[node name="EnemyBoat" parent="Objects" unique_id=1613395293 instance=ExtResource("3_eokee")]
+position = Vector2(182, 33.000004)
+rotation = 0.067159235
+flickering_freq = 0.635
+
+[node name="TinyEnemyBoat" parent="Objects" unique_id=565213686 instance=ExtResource("4_dpw0m")]
+position = Vector2(-104, 49)
+scale = Vector2(-1, 1)
+speed = 64.0
+
+[node name="TinyEnemyBoat2" parent="Objects" unique_id=2140970824 instance=ExtResource("4_dpw0m")]
+position = Vector2(242, 104)
+speed = 48.0
+flickering_freq = 0.84
+
 [node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
 position = Vector2(83, 38)
 collision_layer = 67
@@ -189,105 +198,23 @@ texture = ExtResource("4_luvnn")
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cx6gv")
 
+[node name="PlayerLifes" type="CanvasLayer" parent="Objects/BallObject" unique_id=1291277834]
+
+[node name="Label" type="Label" parent="Objects/BallObject/PlayerLifes" unique_id=2087578016]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "LIFES:"
+label_settings = SubResource("LabelSettings_eokee")
+metadata/_edit_use_anchors_ = true
+
 [node name="Bumpers" parent="Objects" unique_id=703446543 instance=ExtResource("5_3f3r5")]
 
-[node name="PirateShip" parent="Objects" unique_id=591132309 instance=ExtResource("6_bavps")]
-light_mask = 8
-visibility_layer = 8
-z_as_relative = false
-position = Vector2(181, 34)
-speed = 8
-
-[node name="MiniPirateShip" type="Area2D" parent="Objects" unique_id=1385807070 node_paths=PackedStringArray("sprite", "collision")]
-light_mask = 8
-visibility_layer = 8
-z_as_relative = false
-position = Vector2(-29, 58)
-scale = Vector2(-0.5, 0.5)
-disable_mode = 2
-collision_layer = 65
-collision_mask = 65
-script = ExtResource("7_2eohi")
-speed = 48
-sprite = NodePath("Path2D/PathFollow2D/Sprite2D")
-collision = NodePath("CollisionShape2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/MiniPirateShip" unique_id=1297815721]
-position = Vector2(1.1920929e-07, -2.3841858e-07)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_niyu1")
-
-[node name="Path2D" type="Path2D" parent="Objects/MiniPirateShip" unique_id=772861265]
-position = Vector2(94.99999, 5.9999995)
-scale = Vector2(0.99999994, 0.99999994)
-curve = SubResource("Curve2D_me8p6")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Objects/MiniPirateShip/Path2D" unique_id=1891141630]
-position = Vector2(-95.81826, -3.6955264)
-rotation = -2.7728403
-progress = 8.0
-rotates = false
-cubic_interp = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Objects/MiniPirateShip/Path2D/PathFollow2D" unique_id=1177072598]
-texture_filter = 3
-position = Vector2(0.08885193, -0.1586628)
-rotation = -3.5081117
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("8_kufru")
-
-[node name="MiniPirateShip2" type="Area2D" parent="Objects" unique_id=663156744 node_paths=PackedStringArray("sprite", "collision")]
-light_mask = 8
-visibility_layer = 8
-z_as_relative = false
-position = Vector2(198, 79)
-scale = Vector2(0.5, 0.5)
-disable_mode = 2
-collision_layer = 65
-collision_mask = 65
-script = ExtResource("7_2eohi")
-speed = 32
-sprite = NodePath("Path2D/PathFollow2D/Sprite2D")
-collision = NodePath("CollisionShape2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/MiniPirateShip2" unique_id=1189559913]
-position = Vector2(1.1920929e-07, -2.3841858e-07)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_niyu1")
-
-[node name="Path2D" type="Path2D" parent="Objects/MiniPirateShip2" unique_id=637024831]
-position = Vector2(94.99999, 5.9999995)
-scale = Vector2(0.99999994, 0.99999994)
-curve = SubResource("Curve2D_me8p6")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Objects/MiniPirateShip2/Path2D" unique_id=1170317527]
-position = Vector2(-95.81826, -3.6955264)
-rotation = -2.7728403
-progress = 8.0
-rotates = false
-cubic_interp = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Objects/MiniPirateShip2/Path2D/PathFollow2D" unique_id=2001663114]
-texture_filter = 3
-position = Vector2(0.08885193, -0.1586628)
-rotation = -3.5081117
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("8_kufru")
-
-[node name="PShipSpawnPoint" type="Marker2D" parent="Objects" unique_id=1378407301]
-
-[node name="WallsSprite" type="Sprite2D" parent="Objects/PShipSpawnPoint" unique_id=1256848460]
-light_mask = 12
-visibility_layer = 7
-texture_filter = 1
-position = Vector2(80, 72)
-texture = ExtResource("9_vrl3m")
-
-[node name="Cannon" parent="Objects" unique_id=1524108360 instance=ExtResource("10_hqt7a")]
+[node name="CannonRight" parent="Objects" unique_id=1524108360 instance=ExtResource("10_hqt7a")]
 position = Vector2(148, 39)
 rotation = -2.2052476
 
-[node name="Cannon2" parent="Objects" unique_id=1986418492 instance=ExtResource("10_hqt7a")]
+[node name="CannonLeft" parent="Objects" unique_id=1986418492 instance=ExtResource("10_hqt7a")]
 position = Vector2(12, 39)
 rotation = 2.1991148
 
@@ -327,6 +254,13 @@ texture = ExtResource("13_cqmc7")
 position = Vector2(-14, 7)
 rotation = -1.9565141
 shape = SubResource("CapsuleShape2D_71pa8")
+
+[node name="WallsSprite" type="Sprite2D" parent="Objects" unique_id=1256848460]
+light_mask = 12
+visibility_layer = 7
+texture_filter = 1
+position = Vector2(80, 72)
+texture = ExtResource("9_vrl3m")
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=980725062]
 script = ExtResource("14_sik6s")
@@ -372,8 +306,8 @@ shape = SubResource("RectangleShape2D_wqb6v")
 
 [node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("17_lyewn")]
 
-[connection signal="_destroyed" from="Objects/PirateShip" to="Objects/BallObject" method="_on_pirate_ship__destroyed"]
-[connection signal="body_entered" from="Objects/MiniPirateShip" to="Objects/BallObject" method="_on_mini_pirate_ship_body_entered"]
+[connection signal="_locked_flippers" from="Objects/BallObject" to="Objects/RipperControl" method="_s_locked_flippers"]
+[connection signal="body_entered" from="Objects/CannonRight" to="Objects/BallObject" method="_on_cannon_body_entered"]
 [connection signal="body_entered" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_entered"]
 [connection signal="body_exited" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_exited"]
 [connection signal="body_entered" from="NextLevelArea" to="." method="_on_next_level_area_body_entered"]

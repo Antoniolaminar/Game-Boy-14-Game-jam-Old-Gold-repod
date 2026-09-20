@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dj27e7fm3evex"]
+
+[ext_resource type="Script" uid="uid://db815lgac0abs" path="res://enemy_boat.gd" id="1_fye3w"]
+[ext_resource type="Texture2D" uid="uid://c1mdeg5hr6n2t" path="res://Scenes/Sprite_ship.tiny.png" id="2_fye3w"]
+
+[sub_resource type="Curve2D" id="Curve2D_ckdgm"]
+bake_interval = 4.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -88, -2, 0, 0, 0, 0, -138, -23, 0, 0, 0, 0, -205, -3, 0, 0, 0, 0, -251, -20, 0, 0, 0, 0, -311, -5, 0, 0, 0, 0, -360, -21, 0, 0, 0, 0, -445, -7)
+}
+point_count = 7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yrln"]
+size = Vector2(25.000008, 25)
+
+[node name="BoatControl" type="Node2D" unique_id=565213686]
+texture_filter = 1
+script = ExtResource("1_fye3w")
+speed = 16.0
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1412080680]
+position = Vector2(95, 6)
+scale = Vector2(0.99999994, 0.99999994)
+curve = SubResource("Curve2D_ckdgm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=2115394515]
+position = Vector2(-137.78703, -22.910555)
+rotation = -2.7728403
+progress = 54.0
+rotates = false
+cubic_interp = false
+
+[node name="EnemyBoatBody" type="Area2D" parent="Path2D/PathFollow2D" unique_id=1180675582]
+position = Vector2(-42.48986, 2.5331602)
+rotation = 2.7728403
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/EnemyBoatBody" unique_id=1860573388]
+position = Vector2(0.50000006, -1.4999981)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_0yrln")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/EnemyBoatBody" unique_id=2000188233]
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("2_fye3w")
+
+[connection signal="body_entered" from="Path2D/PathFollow2D/EnemyBoatBody" to="." method="_on_body_entered"]

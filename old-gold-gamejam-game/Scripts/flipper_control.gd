@@ -3,11 +3,9 @@ extends RigidBody2D
 @export var rotation_left_value = 0
 var free_ball = true
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsejhd time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -40,3 +38,8 @@ func _physics_process(delta: float) -> void:
 	$RightFlipper.rotation_degrees = rotation_right_value
 	$LeftFlipper.rotation_degrees = rotation_left_value
 	pass
+
+
+#func _s_locked_flippers(locked: bool) -> void:
+#	free_ball = locked
+#	pass # Replace with function body.

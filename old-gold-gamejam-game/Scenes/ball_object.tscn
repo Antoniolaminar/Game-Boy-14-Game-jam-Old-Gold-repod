@@ -2,12 +2,17 @@
 
 [ext_resource type="Script" uid="uid://rcunbeviglku" path="res://Scripts/ball_object.gd" id="1_lgcwf"]
 [ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/level1Assets/Sprite_Ball1.png" id="2_jkpjm"]
+[ext_resource type="FontFile" uid="uid://dehskx6ywim5u" path="res://Early GameBoy.ttf" id="3_jkpjm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g0h2p"]
 friction = 0.31
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibfpi"]
 radius = 8.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yrln"]
+font = ExtResource("3_jkpjm")
+font_size = 8
 
 [node name="BallObject" type="RigidBody2D" unique_id=115346264]
 collision_layer = 67
@@ -26,3 +31,13 @@ texture = ExtResource("2_jkpjm")
 [node name="BallCollision" type="CollisionShape2D" parent="." unique_id=1361964306]
 position = Vector2(102, 86)
 shape = SubResource("CircleShape2D_ibfpi")
+
+[node name="PlayerLifes" type="CanvasLayer" parent="." unique_id=774598016]
+
+[node name="Label" type="Label" parent="PlayerLifes" unique_id=1365797694]
+texture_filter = 3
+offset_right = 40.0
+offset_bottom = 23.0
+text = "LIFES:"
+label_settings = SubResource("LabelSettings_0yrln")
+metadata/_edit_use_anchors_ = true
