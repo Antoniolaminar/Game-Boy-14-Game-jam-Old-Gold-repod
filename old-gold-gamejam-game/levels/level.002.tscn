@@ -178,7 +178,7 @@ shape = SubResource("RectangleShape2D_jyngc")
 [node name="Objects" type="Node" parent="." unique_id=1526000305]
 
 [node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
-position = Vector2(17, 94)
+position = Vector2(85, 59)
 collision_layer = 3
 collision_mask = 3
 mass = 12.0

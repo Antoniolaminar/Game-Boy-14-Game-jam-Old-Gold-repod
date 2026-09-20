@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsejhd time since the previous frame.
-func _physics_prokjkjkjkjjkjkcess(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	#action input do flipper direito
 	if (Input.is_action_pressed("Flipper_Action_Right") && free_ball):
 		#Action de fazer o flipper levantar com threshold para poder ou nao

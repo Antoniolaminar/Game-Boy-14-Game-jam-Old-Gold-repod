@@ -41,4 +41,5 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	if (in_cannon):
 		print("pingas")
+		in_cannon = false
 		

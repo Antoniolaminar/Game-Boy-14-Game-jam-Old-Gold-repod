@@ -37,7 +37,7 @@ func _respawn_ship() -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	if (body as BallObject):
+	if body as BallObject:
 		print("touch ball")
 		_destroyed.emit(true)
 		got_destroyed = true

@@ -10,9 +10,12 @@ friction = 0.31
 radius = 8.0
 
 [node name="BallObject" type="RigidBody2D" unique_id=115346264]
+collision_layer = 67
+collision_mask = 67
 mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_g0h2p")
 gravity_scale = 1.915
+continuous_cd = 2
 script = ExtResource("1_kkock")
 
 [node name="BallSprite" type="Sprite2D" parent="." unique_id=1870503054]

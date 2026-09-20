@@ -14,8 +14,9 @@ _data = {
 point_count = 7
 
 [node name="PirateShip" type="Area2D" unique_id=591132309 node_paths=PackedStringArray("sprite", "collision")]
+disable_mode = 2
 collision_layer = 65
-collision_mask = 65
+collision_mask = 67
 script = ExtResource("1_ydudr")
 sprite = NodePath("Path2D/PathFollow2D/Sprite2D")
 collision = NodePath("CollisionShape2D")
@@ -38,8 +39,8 @@ rotates = false
 cubic_interp = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1717077010]
-light_mask = 8
-visibility_layer = 8
+light_mask = 73
+visibility_layer = 73
 texture_filter = 1
 position = Vector2(0.08885193, -0.1586628)
 rotation = -3.5081117
