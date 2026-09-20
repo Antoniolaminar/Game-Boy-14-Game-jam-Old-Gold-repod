@@ -1,7 +1,7 @@
 class_name BallObject
 extends RigidBody2D
 
-var spawn_vector = Vector2(80, 72)
+var spawn_vector = Vector2(80, 40)
 var dead_ball = false
 
 var entry_velocity = 0.0

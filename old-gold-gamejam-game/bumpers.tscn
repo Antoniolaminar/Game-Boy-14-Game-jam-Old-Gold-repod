@@ -7,8 +7,16 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pabda"]
 bounce = 0.3
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yrln"]
+radius = 0.5439453
+height = 12.806259
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dnhxr"]
 bounce = 0.3
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cx6gv"]
+radius = 0.5842743
+height = 11.621208
 
 [node name="Bumpers" type="Node2D" unique_id=703446543]
 
@@ -25,9 +33,14 @@ texture_filter = 1
 texture = ExtResource("2_s473s")
 
 [node name="LBumperCollision" type="CollisionPolygon2D" parent="BumperLeft" unique_id=351214154]
-polygon = PackedVector2Array(5.13, 7.235, -4.64, -7.545, -5.355, 2.67)
+polygon = PackedVector2Array(5.34, 6.085, -5.195, -7.545, -5.355, 2.67)
 
 [node name="LBumperHitbox" type="Area2D" parent="BumperLeft" unique_id=502762628]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BumperLeft/LBumperHitbox" unique_id=2081809005]
+position = Vector2(1, -1)
+rotation = -0.67535126
+shape = SubResource("CapsuleShape2D_0yrln")
 
 [node name="BumperRight" type="RigidBody2D" parent="." unique_id=689601810]
 position = Vector2(110, 95)
@@ -42,9 +55,14 @@ texture_filter = 1
 texture = ExtResource("3_2j7ct")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BumperRight" unique_id=671322717]
-polygon = PackedVector2Array(4.3, -7.35, -5.13, 7.61, 4.815, 2.465)
+polygon = PackedVector2Array(4.69, -7.35, -4.845, 6.07, 5.05, 2.465)
 
 [node name="RBumperHitbox" type="Area2D" parent="BumperRight" unique_id=1943428202]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BumperRight/RBumperHitbox" unique_id=1148426821]
+position = Vector2(-1, -1)
+rotation = -2.5176167
+shape = SubResource("CapsuleShape2D_cx6gv")
 
 [connection signal="body_entered" from="BumperLeft/LBumperHitbox" to="BumperLeft" method="_on_body_entered_left"]
 [connection signal="body_entered" from="BumperRight/RBumperHitbox" to="BumperRight" method="_on_body_entered_right"]
