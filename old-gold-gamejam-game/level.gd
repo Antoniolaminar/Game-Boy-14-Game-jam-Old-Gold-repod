@@ -29,7 +29,7 @@ func load_next_level() -> void:
 		split_path[1] = "res://main.tscn"
 		next_level_path = ".".join(split_path)
 		
-	get_tree().change_scene_to_file((next_level_path))
+	get_tree().change_scene_to_file.call_deferred(next_level_path)
 
 ##FASE 1 FUNCTIONS ------------------------------------------------------------
 

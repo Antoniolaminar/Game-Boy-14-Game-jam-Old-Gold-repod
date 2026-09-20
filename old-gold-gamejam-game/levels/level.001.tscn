@@ -171,7 +171,7 @@ shape = SubResource("RectangleShape2D_dnl84")
 [node name="Objects" type="Node" parent="." unique_id=1526000305]
 
 [node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
-position = Vector2(56, 56)
+position = Vector2(80, -48)
 collision_layer = 67
 collision_mask = 67
 mass = 17.0
@@ -196,7 +196,6 @@ light_mask = 8
 visibility_layer = 8
 z_as_relative = false
 position = Vector2(181, 34)
-disable_mode = 2
 speed = 8
 
 [node name="MiniPirateShip" type="Area2D" parent="Objects" unique_id=1385807070 node_paths=PackedStringArray("sprite", "collision")]

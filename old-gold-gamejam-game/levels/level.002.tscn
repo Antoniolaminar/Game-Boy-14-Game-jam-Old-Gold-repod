@@ -47,13 +47,19 @@ radius = 2.0
 height = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_st0ao"]
-size = Vector2(24.363447, 6.3736773)
+size = Vector2(19.79346, 6.3736773)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnl84"]
-size = Vector2(24.920607, 7.193163)
+size = Vector2(21.874474, 7.193163)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyngc"]
 size = Vector2(6.5, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shpfn"]
+size = Vector2(20, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkcn8"]
+size = Vector2(20, 25.49805)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o6mmj"]
 friction = 0.0
@@ -97,6 +103,7 @@ radius = 0.5842743
 height = 9.998108
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hlua3"]
+friction = 0.1
 bounce = 2.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yrln"]
@@ -126,7 +133,7 @@ rotation = 0.025657836
 shape = SubResource("SegmentShape2D_0yrln")
 
 [node name="WallCollisions_2" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=273275373]
-position = Vector2(154.99998, 127)
+position = Vector2(155, 128)
 rotation = -0.012704305
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("SegmentShape2D_cx6gv")
@@ -140,29 +147,29 @@ position = Vector2(129, 11)
 shape = SubResource("RectangleShape2D_cx6gv")
 
 [node name="WallCollisions_5" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1247278120]
-position = Vector2(4, 68)
+position = Vector2(2, 68)
 shape = SubResource("RectangleShape2D_o6mmj")
 
 [node name="WallCollisions_6" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1637216443]
-position = Vector2(156, 66.5)
+position = Vector2(157, 67)
 shape = SubResource("RectangleShape2D_ub8mp")
 
 [node name="WallCollisions_7" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=830069478]
-position = Vector2(27, 108)
+position = Vector2(30, 108)
 shape = SubResource("CapsuleShape2D_0yrln")
 
 [node name="WallCollisions_8" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=2073447926]
-position = Vector2(133, 108)
+position = Vector2(129, 110)
 shape = SubResource("CapsuleShape2D_cx6gv")
 
 [node name="WallCollisions_9" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=104291545]
-position = Vector2(37, 122.00001)
+position = Vector2(39.06982, 122.96802)
 rotation = 0.43745753
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_st0ao")
 
 [node name="WallCollisions_10" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1468647492]
-position = Vector2(120.964745, 122.934494)
+position = Vector2(119.62361, 123.656364)
 rotation = -0.49378046
 scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("RectangleShape2D_dnl84")
@@ -174,6 +181,24 @@ shape = SubResource("RectangleShape2D_jyngc")
 [node name="WallCollisions_12" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=917900970]
 position = Vector2(57.75, 27)
 shape = SubResource("RectangleShape2D_jyngc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=336434214]
+position = Vector2(2, 93.5)
+shape = SubResource("RectangleShape2D_shpfn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1141480986]
+position = Vector2(158, 95)
+shape = SubResource("RectangleShape2D_shpfn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=2066838943]
+position = Vector2(7.999999, 71)
+rotation = -0.8662057
+shape = SubResource("RectangleShape2D_tkcn8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1081873965]
+position = Vector2(152, 72)
+rotation = -2.4230244
+shape = SubResource("RectangleShape2D_tkcn8")
 
 [node name="Objects" type="Node" parent="." unique_id=1526000305]
 
@@ -201,7 +226,7 @@ position = Vector2(0, 8)
 script = ExtResource("3_shxk2")
 
 [node name="LeftFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=298857411]
-position = Vector2(42, 117)
+position = Vector2(43, 116)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
@@ -212,12 +237,12 @@ position = Vector2(14, 6)
 texture = ExtResource("4_mgfv4")
 
 [node name="LFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/LeftFlipper" unique_id=1733927101]
-position = Vector2(14, 7)
-rotation = 1.9565141
+position = Vector2(14, 6)
+rotation = 1.8133466
 shape = SubResource("CapsuleShape2D_05x41")
 
 [node name="RightFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=816567941]
-position = Vector2(118, 117)
+position = Vector2(119, 116)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
@@ -228,8 +253,8 @@ position = Vector2(-14, 6)
 texture = ExtResource("5_2m3fi")
 
 [node name="RFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/RightFlipper" unique_id=1113150066]
-position = Vector2(-14, 7)
-rotation = -1.9565141
+position = Vector2(-14, 6)
+rotation = -1.857181
 shape = SubResource("CapsuleShape2D_71pa8")
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=980725062]
@@ -323,7 +348,7 @@ shape = SubResource("CapsuleShape2D_tccyq")
 [node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("11_s2ivx")]
 
 [node name="StaticBumper" type="StaticBody2D" parent="." unique_id=774618125]
-position = Vector2(23, 31)
+position = Vector2(29, 34)
 physics_material_override = SubResource("PhysicsMaterial_hlua3")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBumper" unique_id=873942583]
@@ -334,7 +359,7 @@ texture = ExtResource("15_hlua3")
 shape = SubResource("CircleShape2D_0yrln")
 
 [node name="StaticBumper2" type="StaticBody2D" parent="." unique_id=742572578]
-position = Vector2(138, 31)
+position = Vector2(131, 35)
 physics_material_override = SubResource("PhysicsMaterial_hlua3")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBumper2" unique_id=707798782]
