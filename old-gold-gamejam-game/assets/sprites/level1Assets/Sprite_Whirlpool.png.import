@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh6ix77yv8uj7"
-path="res://.godot/imported/sprite_rightflipper1.png-de1a448fdd40c504f31ac4e1b392d55b.ctex"
+uid="uid://b0bb8vswl72on"
+path="res://.godot/imported/Sprite_Whirlpool.png-8f857c236dc22657840a62947f994137.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/sprite_rightflipper1.png"
-dest_files=["res://.godot/imported/sprite_rightflipper1.png-de1a448fdd40c504f31ac4e1b392d55b.ctex"]
+source_file="res://assets/sprites/level1Assets/Sprite_Whirlpool.png"
+dest_files=["res://.godot/imported/Sprite_Whirlpool.png-8f857c236dc22657840a62947f994137.ctex"]
 
 [params]
 

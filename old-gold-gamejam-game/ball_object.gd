@@ -1,6 +1,7 @@
 class_name BallObject
 extends RigidBody2D
 
+
 var spawn_vector = Vector2(80, 40)
 var dead_ball = false
 
@@ -32,5 +33,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.transform = Transform2D(0.0, spawn_vector)
 		state.angular_velocity = 0.0
 		dead_ball = false
-		
+	
+	#if (cannon_action)
 		

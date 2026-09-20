@@ -1,0 +1,265 @@
+[gd_scene format=3 uid="uid://dkfng1blv8163"]
+
+[ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/sprites/level1Assets/Background1.png" id="1_d2t8i"]
+[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/sprites/level1Assets/Walls1.png" id="2_8eiwt"]
+[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="3_5wq1e"]
+[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprites/level1Assets/sprite_leftflipper1.png" id="4_5wq1e"]
+[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprites/level1Assets/sprite_rightflipper1.png" id="5_10i38"]
+[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://ball_object.gd" id="6_2oudu"]
+[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/sprites/level1Assets/Sprite_Ball1.png" id="7_mqsht"]
+[ext_resource type="PackedScene" uid="uid://bgcq7yyd7jp53" path="res://bumpers.tscn" id="8_me8p6"]
+[ext_resource type="PackedScene" uid="uid://cvvy4ov16rfpc" path="res://pirate_ship.tscn" id="9_2oudu"]
+[ext_resource type="Script" uid="uid://cetv3qamqobdv" path="res://death_zone.gd" id="9_648fj"]
+[ext_resource type="Texture2D" uid="uid://cvyuvmvydng46" path="res://assets/sprites/level1Assets/sprite_rockwall1.png" id="11_niyu1"]
+[ext_resource type="PackedScene" uid="uid://dm1alebgrxmah" path="res://music_player.tscn" id="11_s1d7x"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0t07s"]
+friction = 0.25
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0yrln"]
+a = Vector2(44, 128)
+b = Vector2(-1, 105)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cx6gv"]
+b = Vector2(-43, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yrln"]
+size = Vector2(55, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx6gv"]
+size = Vector2(56, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6mmj"]
+size = Vector2(8, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub8mp"]
+size = Vector2(8, 121)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yrln"]
+radius = 2.5
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cx6gv"]
+radius = 2.0
+height = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st0ao"]
+size = Vector2(24.363447, 6.3736773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnl84"]
+size = Vector2(24.920607, 7.3419228)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05x41"]
+radius = 4.082344
+height = 30.36
+
+[sub_resource type="GDScript" id="GDScript_gqbix"]
+script/source = "extends RigidBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71pa8"]
+radius = 4.0823364
+height = 30.46
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o6mmj"]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cx6gv"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb2pt"]
+size = Vector2(168.76218, 25.31472)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dvry"]
+size = Vector2(62, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6dvry"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqb6v"]
+size = Vector2(50, 13)
+
+[node name="Level" type="Node" unique_id=574883530]
+
+[node name="LevelSolids" type="Node" parent="." unique_id=118106884]
+
+[node name="Level1_OceanWalls" type="StaticBody2D" parent="LevelSolids" unique_id=1751367213]
+physics_material_override = SubResource("PhysicsMaterial_0t07s")
+
+[node name="BackGroundSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=298641059]
+texture_filter = 1
+position = Vector2(80, 72)
+texture = ExtResource("1_d2t8i")
+
+[node name="WallsSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=414235990]
+texture_filter = 1
+position = Vector2(80, 72)
+texture = ExtResource("2_8eiwt")
+
+[node name="WallCollisions_1" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=413390267]
+position = Vector2(6, 19)
+rotation = -0.01456245
+shape = SubResource("SegmentShape2D_0yrln")
+
+[node name="WallCollisions_2" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=273275373]
+position = Vector2(153.00002, 124.99999)
+rotation = 0.05339971
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("SegmentShape2D_cx6gv")
+
+[node name="WallCollisions_3" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=107477987]
+position = Vector2(28.5, 5)
+shape = SubResource("RectangleShape2D_0yrln")
+
+[node name="WallCollisions_4" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1525063124]
+position = Vector2(132, 5)
+shape = SubResource("RectangleShape2D_cx6gv")
+
+[node name="WallCollisions_5" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1247278120]
+position = Vector2(4, 68)
+shape = SubResource("RectangleShape2D_o6mmj")
+
+[node name="WallCollisions_6" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1637216443]
+position = Vector2(156, 66.5)
+shape = SubResource("RectangleShape2D_ub8mp")
+
+[node name="WallCollisions_7" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=830069478]
+position = Vector2(27, 100)
+shape = SubResource("CapsuleShape2D_0yrln")
+
+[node name="WallCollisions_8" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=2073447926]
+position = Vector2(133, 102)
+shape = SubResource("CapsuleShape2D_cx6gv")
+
+[node name="WallCollisions_9" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=104291545]
+position = Vector2(36.999992, 114.99999)
+rotation = 0.43745753
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_st0ao")
+
+[node name="WallCollisions_10" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1468647492]
+position = Vector2(121.00001, 117)
+rotation = -0.49378046
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_dnl84")
+
+[node name="Objects" type="Node" parent="." unique_id=1526000305]
+
+[node name="RipperControl" type="RigidBody2D" parent="Objects" unique_id=399619787]
+script = ExtResource("3_5wq1e")
+
+[node name="LeftFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=298857411]
+position = Vector2(43, 118)
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+
+[node name="LFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/LeftFlipper" unique_id=784716824]
+texture_filter = 1
+position = Vector2(14, 6)
+texture = ExtResource("4_5wq1e")
+
+[node name="LFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/LeftFlipper" unique_id=1733927101]
+position = Vector2(14, 7)
+rotation = 1.9565141
+shape = SubResource("CapsuleShape2D_05x41")
+
+[node name="RightFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=816567941]
+position = Vector2(118, 118)
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+script = SubResource("GDScript_gqbix")
+
+[node name="RFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/RightFlipper" unique_id=1914170928]
+texture_filter = 1
+position = Vector2(-14, 6)
+texture = ExtResource("5_10i38")
+
+[node name="RFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/RightFlipper" unique_id=1113150066]
+position = Vector2(-14, 7)
+rotation = -1.9565141
+shape = SubResource("CapsuleShape2D_71pa8")
+
+[node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
+position = Vector2(104, 56)
+collision_layer = 3
+collision_mask = 3
+mass = 12.0
+physics_material_override = SubResource("PhysicsMaterial_o6mmj")
+gravity_scale = 0.3
+lock_rotation = true
+script = ExtResource("6_2oudu")
+
+[node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("7_mqsht")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_cx6gv")
+
+[node name="Bumpers" parent="Objects" unique_id=703446543 instance=ExtResource("8_me8p6")]
+
+[node name="PirateShip" parent="Objects" unique_id=591132309 instance=ExtResource("9_2oudu")]
+position = Vector2(40, 34)
+
+[node name="PShipSpawnPoint" type="Marker2D" parent="Objects" unique_id=1378407301]
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=980725062]
+script = ExtResource("9_648fj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=867956645]
+position = Vector2(82, 163)
+shape = SubResource("RectangleShape2D_sb2pt")
+debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone" unique_id=133247536]
+position = Vector2(-13.92512, 81.3849)
+rotation = 1.5794878
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_sb2pt")
+debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZone" unique_id=892127562]
+position = Vector2(174.00002, 79)
+rotation = 1.5794878
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_sb2pt")
+debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
+
+[node name="NextLevelArea" type="Area2D" parent="." unique_id=901061443]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelArea" unique_id=276690768]
+position = Vector2(79, -10)
+shape = SubResource("RectangleShape2D_6dvry")
+
+[node name="RockWallBody" type="StaticBody2D" parent="." unique_id=754591651]
+position = Vector2(80, 8)
+physics_material_override = SubResource("PhysicsMaterial_6dvry")
+
+[node name="RockSprite" type="Sprite2D" parent="RockWallBody" unique_id=610095767]
+texture_filter = 1
+texture = ExtResource("11_niyu1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RockWallBody" unique_id=1622476793]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_wqb6v")
+
+[node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("11_s1d7x")]
+
+[connection signal="body_entered" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_entered"]
+[connection signal="body_exited" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_exited"]

@@ -1,15 +1,16 @@
-[gd_scene format=3 uid="uid://dkfng1blv8163"]
+[gd_scene format=3 uid="uid://dmlm08sox2x2h"]
 
-[ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/sprites/Background1.png" id="1_8cye3"]
-[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/sprites/Walls1.png" id="2_2orkt"]
-[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="3_aicyk"]
-[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprites/sprite_leftflipper1.png" id="4_8b0r0"]
-[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprites/sprite_rightflipper1.png" id="5_h6smj"]
-[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://ball_object.gd" id="6_v5j5c"]
-[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/sprites/Sprite_Ball1.png" id="7_5pxul"]
-[ext_resource type="PackedScene" uid="uid://bgcq7yyd7jp53" path="res://bumpers.tscn" id="8_fedht"]
-[ext_resource type="Script" uid="uid://cetv3qamqobdv" path="res://death_zone.gd" id="9_4c15r"]
-[ext_resource type="Texture2D" uid="uid://cvyuvmvydng46" path="res://assets/sprites/sprite_rockwall1.png" id="10_ait7k"]
+[ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/sprites/level1Assets/Background1.png" id="1_2k0mj"]
+[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/sprites/level1Assets/Walls1.png" id="2_b5vbu"]
+[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="3_qip1l"]
+[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprites/level1Assets/sprite_leftflipper1.png" id="4_of3b7"]
+[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprites/level1Assets/sprite_rightflipper1.png" id="5_av5el"]
+[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://ball_object.gd" id="6_wivkl"]
+[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/sprites/level1Assets/Sprite_Ball1.png" id="7_bsert"]
+[ext_resource type="PackedScene" uid="uid://bgcq7yyd7jp53" path="res://bumpers.tscn" id="8_ihj3p"]
+[ext_resource type="Script" uid="uid://cetv3qamqobdv" path="res://death_zone.gd" id="9_ed3jy"]
+[ext_resource type="Texture2D" uid="uid://cvyuvmvydng46" path="res://assets/sprites/level1Assets/sprite_rockwall1.png" id="10_e7nes"]
+[ext_resource type="PackedScene" uid="uid://dm1alebgrxmah" path="res://music_player.tscn" id="11_iqarq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0t07s"]
 friction = 0.25
@@ -48,8 +49,8 @@ size = Vector2(24.363447, 6.3736773)
 size = Vector2(24.920607, 7.3419228)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05x41"]
-radius = 3.36
-height = 27.18
+radius = 4.082344
+height = 30.36
 
 [sub_resource type="GDScript" id="GDScript_gqbix"]
 script/source = "extends RigidBody2D
@@ -66,8 +67,8 @@ func _process(_delta: float) -> void:
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71pa8"]
-radius = 3.36
-height = 27.184616
+radius = 4.0823364
+height = 30.46
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o6mmj"]
 friction = 0.0
@@ -78,6 +79,9 @@ radius = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb2pt"]
 size = Vector2(168.76218, 25.31472)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dvry"]
+size = Vector2(62, 20)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6dvry"]
 rough = true
@@ -95,20 +99,20 @@ physics_material_override = SubResource("PhysicsMaterial_0t07s")
 [node name="BackGroundSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=298641059]
 texture_filter = 1
 position = Vector2(80, 72)
-texture = ExtResource("1_8cye3")
+texture = ExtResource("1_2k0mj")
 
 [node name="WallsSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=414235990]
 texture_filter = 1
 position = Vector2(80, 72)
-texture = ExtResource("2_2orkt")
+texture = ExtResource("2_b5vbu")
 
 [node name="WallCollisions_1" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=413390267]
-position = Vector2(6, 18)
+position = Vector2(6, 19)
 rotation = -0.01456245
 shape = SubResource("SegmentShape2D_0yrln")
 
 [node name="WallCollisions_2" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=273275373]
-position = Vector2(153, 123.99999)
+position = Vector2(153.00002, 124.99999)
 rotation = 0.05339971
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("SegmentShape2D_cx6gv")
@@ -152,7 +156,7 @@ shape = SubResource("RectangleShape2D_dnl84")
 [node name="Objects" type="Node" parent="." unique_id=1526000305]
 
 [node name="RipperControl" type="RigidBody2D" parent="Objects" unique_id=399619787]
-script = ExtResource("3_aicyk")
+script = ExtResource("3_qip1l")
 
 [node name="LeftFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=298857411]
 position = Vector2(43, 118)
@@ -163,10 +167,10 @@ freeze_mode = 1
 [node name="LFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/LeftFlipper" unique_id=784716824]
 texture_filter = 1
 position = Vector2(14, 6)
-texture = ExtResource("4_8b0r0")
+texture = ExtResource("4_of3b7")
 
 [node name="LFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/LeftFlipper" unique_id=1733927101]
-position = Vector2(15, 6)
+position = Vector2(14, 7)
 rotation = 1.9565141
 shape = SubResource("CapsuleShape2D_05x41")
 
@@ -180,36 +184,36 @@ script = SubResource("GDScript_gqbix")
 [node name="RFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/RightFlipper" unique_id=1914170928]
 texture_filter = 1
 position = Vector2(-14, 6)
-texture = ExtResource("5_h6smj")
+texture = ExtResource("5_av5el")
 
 [node name="RFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/RightFlipper" unique_id=1113150066]
-position = Vector2(-15, 6)
+position = Vector2(-14, 7)
 rotation = -1.9565141
 shape = SubResource("CapsuleShape2D_71pa8")
 
 [node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
-position = Vector2(106, 54)
+position = Vector2(104, 56)
 collision_layer = 3
 collision_mask = 3
 mass = 12.0
 physics_material_override = SubResource("PhysicsMaterial_o6mmj")
 gravity_scale = 0.3
 lock_rotation = true
-script = ExtResource("6_v5j5c")
+script = ExtResource("6_wivkl")
 
 [node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
 texture_filter = 1
 position = Vector2(0, 1)
-texture = ExtResource("7_5pxul")
+texture = ExtResource("7_bsert")
 
 [node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cx6gv")
 
-[node name="Bumpers" parent="Objects" unique_id=703446543 instance=ExtResource("8_fedht")]
+[node name="Bumpers" parent="Objects" unique_id=703446543 instance=ExtResource("8_ihj3p")]
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=980725062]
-script = ExtResource("9_4c15r")
+script = ExtResource("9_ed3jy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=867956645]
 position = Vector2(82, 163)
@@ -231,6 +235,11 @@ shape = SubResource("RectangleShape2D_sb2pt")
 debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
 
 [node name="NextLevelArea" type="Area2D" parent="." unique_id=901061443]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelArea" unique_id=276690768]
+position = Vector2(79, -10)
+shape = SubResource("RectangleShape2D_6dvry")
 
 [node name="RockWallBody" type="StaticBody2D" parent="." unique_id=754591651]
 position = Vector2(80, 8)
@@ -238,11 +247,13 @@ physics_material_override = SubResource("PhysicsMaterial_6dvry")
 
 [node name="RockSprite" type="Sprite2D" parent="RockWallBody" unique_id=610095767]
 texture_filter = 1
-texture = ExtResource("10_ait7k")
+texture = ExtResource("10_e7nes")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RockWallBody" unique_id=1622476793]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_wqb6v")
+
+[node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("11_iqarq")]
 
 [connection signal="body_entered" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_entered"]
 [connection signal="body_exited" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_exited"]

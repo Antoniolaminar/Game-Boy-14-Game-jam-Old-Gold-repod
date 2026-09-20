@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rkq86bre1flu"
-path="res://.godot/imported/Sprite_Enemyship.png-6384cd5075b7f403e2b12f1b03e0ada9.ctex"
+uid="uid://bhunvqj1gomv8"
+path="res://.godot/imported/sprite_cannon1.png-3c4ad1698e1b55e5471c2182bdc8f36c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Sprite_Enemyship.png"
-dest_files=["res://.godot/imported/Sprite_Enemyship.png-6384cd5075b7f403e2b12f1b03e0ada9.ctex"]
+source_file="res://assets/sprites/level1Assets/sprite_cannon1.png"
+dest_files=["res://.godot/imported/sprite_cannon1.png-3c4ad1698e1b55e5471c2182bdc8f36c.ctex"]
 
 [params]
 

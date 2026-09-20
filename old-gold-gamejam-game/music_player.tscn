@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dm1alebgrxmah"]
+
+[ext_resource type="AudioStream" uid="uid://w7hy71refqe4" path="res://assets/songs/NIGHTVISION.mp3" id="1_fvyft"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" unique_id=378841087]
+stream = ExtResource("1_fvyft")
+autoplay = true

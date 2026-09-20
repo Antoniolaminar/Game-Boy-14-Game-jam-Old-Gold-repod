@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cvvy4ov16rfpc"]
+
+[ext_resource type="Texture2D" uid="uid://rkq86bre1flu" path="res://assets/sprites/level1Assets/Sprite_Enemyship.png" id="1_30eky"]
+[ext_resource type="Script" uid="uid://br0sorsk4lwjr" path="res://pirate_ship.gd" id="1_ydudr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s473s"]
+size = Vector2(39, 25)
+
+[sub_resource type="Curve2D" id="Curve2D_ydudr"]
+
+[node name="PirateShip" type="Area2D" unique_id=591132309]
+position = Vector2(76, 78)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_ydudr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=100004146]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_s473s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717077010]
+texture_filter = 1
+texture = ExtResource("1_30eky")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1865439584]
+curve = SubResource("Curve2D_ydudr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1838913094]

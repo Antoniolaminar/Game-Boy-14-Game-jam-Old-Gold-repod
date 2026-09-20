@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0bb8vswl72on"
-path="res://.godot/imported/Sprite_Whirlpool.png-9e66b74bd02a32a3f2a86d1db9b5237e.ctex"
+uid="uid://cvb2pwowyv25y"
+path="res://.godot/imported/Sprite_Ball1.png-c90363c706d16f293188932214d02af7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Sprite_Whirlpool.png"
-dest_files=["res://.godot/imported/Sprite_Whirlpool.png-9e66b74bd02a32a3f2a86d1db9b5237e.ctex"]
+source_file="res://assets/sprites/level1Assets/Sprite_Ball1.png"
+dest_files=["res://.godot/imported/Sprite_Ball1.png-c90363c706d16f293188932214d02af7.ctex"]
 
 [params]
 
