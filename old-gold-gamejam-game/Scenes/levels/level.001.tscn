@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://dkfng1blv8163"]
 
-[ext_resource type="Script" uid="uid://qli2sunudjfr" path="res://level.gd" id="1_5wq1e"]
-[ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/level1Assets/Background1.png" id="1_d2t8i"]
-[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/level1Assets/Walls1.png" id="2_8eiwt"]
-[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="3_5wq1e"]
-[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/level1Assets/sprite_leftflipper1.png" id="4_5wq1e"]
-[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/level1Assets/sprite_rightflipper1.png" id="5_10i38"]
-[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://ball_object.gd" id="6_2oudu"]
-[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/level1Assets/Sprite_Ball1.png" id="7_mqsht"]
-[ext_resource type="PackedScene" uid="uid://bgcq7yyd7jp53" path="res://bumpers.tscn" id="8_me8p6"]
-[ext_resource type="PackedScene" uid="uid://cvvy4ov16rfpc" path="res://pirate_ship.tscn" id="9_2oudu"]
-[ext_resource type="Script" uid="uid://cetv3qamqobdv" path="res://death_zone.gd" id="9_648fj"]
-[ext_resource type="Texture2D" uid="uid://rkq86bre1flu" path="res://assets/level1Assets/Sprite_Enemyship.png" id="11_2oudu"]
-[ext_resource type="PackedScene" uid="uid://dowqc3b2k1y7w" path="res://cannon.tscn" id="11_10i38"]
-[ext_resource type="Script" uid="uid://br0sorsk4lwjr" path="res://pirate_ship.gd" id="11_me8p6"]
-[ext_resource type="Texture2D" uid="uid://cvyuvmvydng46" path="res://assets/level1Assets/sprite_rockwall1.png" id="11_niyu1"]
-[ext_resource type="PackedScene" uid="uid://dm1alebgrxmah" path="res://music_player.tscn" id="11_s1d7x"]
-[ext_resource type="Script" uid="uid://bg1sxmgsagumb" path="res://levels/rock_wall_body.gd" id="13_mqsht"]
+[ext_resource type="Script" uid="uid://qli2sunudjfr" path="res://Scripts/level.gd" id="1_buafm"]
+[ext_resource type="Texture2D" uid="uid://cqkty0h85pb6r" path="res://assets/level1Assets/Background1.png" id="2_eokee"]
+[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://Scripts/ball_object.gd" id="3_vrmbg"]
+[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/level1Assets/Sprite_Ball1.png" id="4_luvnn"]
+[ext_resource type="PackedScene" uid="uid://bgcq7yyd7jp53" path="res://Scenes/bumpers.tscn" id="5_3f3r5"]
+[ext_resource type="PackedScene" uid="uid://cvvy4ov16rfpc" path="res://Scenes/pirate_ship.tscn" id="6_bavps"]
+[ext_resource type="Script" uid="uid://br0sorsk4lwjr" path="res://Scripts/pirate_ship.gd" id="7_2eohi"]
+[ext_resource type="Texture2D" uid="uid://rkq86bre1flu" path="res://assets/level1Assets/Sprite_Enemyship.png" id="8_kufru"]
+[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/level1Assets/Walls1.png" id="9_vrl3m"]
+[ext_resource type="PackedScene" uid="uid://dowqc3b2k1y7w" path="res://Scenes/cannon.tscn" id="10_hqt7a"]
+[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://Scripts/flipper_control.gd" id="11_4hmf5"]
+[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/level1Assets/sprite_leftflipper1.png" id="12_n5312"]
+[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/level1Assets/sprite_rightflipper1.png" id="13_cqmc7"]
+[ext_resource type="Script" uid="uid://cetv3qamqobdv" path="res://Scripts/death_zone.gd" id="14_sik6s"]
+[ext_resource type="Script" uid="uid://bg1sxmgsagumb" path="res://Scenes/levels/rock_wall_body.gd" id="15_1q3gk"]
+[ext_resource type="Texture2D" uid="uid://cvyuvmvydng46" path="res://assets/level1Assets/sprite_rockwall1.png" id="16_lxk4h"]
+[ext_resource type="PackedScene" uid="uid://dm1alebgrxmah" path="res://Scenes/music_player.tscn" id="17_lyewn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0t07s"]
 friction = 0.25
@@ -106,7 +106,7 @@ rough = true
 size = Vector2(50, 13)
 
 [node name="Level" type="Node" unique_id=574883530]
-script = ExtResource("1_5wq1e")
+script = ExtResource("1_buafm")
 
 [node name="LevelSolids" type="Node" parent="." unique_id=118106884]
 
@@ -119,7 +119,7 @@ light_mask = 256
 visibility_layer = 256
 texture_filter = 1
 position = Vector2(80, 72)
-texture = ExtResource("1_d2t8i")
+texture = ExtResource("2_eokee")
 
 [node name="WallCollisions_1" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=413390267]
 position = Vector2(6, 19)
@@ -171,27 +171,27 @@ shape = SubResource("RectangleShape2D_dnl84")
 [node name="Objects" type="Node" parent="." unique_id=1526000305]
 
 [node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
-position = Vector2(80, -48)
+position = Vector2(83, 38)
 collision_layer = 67
 collision_mask = 67
 mass = 17.0
 physics_material_override = SubResource("PhysicsMaterial_o6mmj")
 gravity_scale = 0.5
 lock_rotation = true
-script = ExtResource("6_2oudu")
+script = ExtResource("3_vrmbg")
 
 [node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
 texture_filter = 1
 position = Vector2(0, 1)
-texture = ExtResource("7_mqsht")
+texture = ExtResource("4_luvnn")
 
 [node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cx6gv")
 
-[node name="Bumpers" parent="Objects" unique_id=703446543 instance=ExtResource("8_me8p6")]
+[node name="Bumpers" parent="Objects" unique_id=703446543 instance=ExtResource("5_3f3r5")]
 
-[node name="PirateShip" parent="Objects" unique_id=591132309 instance=ExtResource("9_2oudu")]
+[node name="PirateShip" parent="Objects" unique_id=591132309 instance=ExtResource("6_bavps")]
 light_mask = 8
 visibility_layer = 8
 z_as_relative = false
@@ -207,7 +207,7 @@ scale = Vector2(-0.5, 0.5)
 disable_mode = 2
 collision_layer = 65
 collision_mask = 65
-script = ExtResource("11_me8p6")
+script = ExtResource("7_2eohi")
 speed = 48
 sprite = NodePath("Path2D/PathFollow2D/Sprite2D")
 collision = NodePath("CollisionShape2D")
@@ -234,7 +234,7 @@ texture_filter = 3
 position = Vector2(0.08885193, -0.1586628)
 rotation = -3.5081117
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("11_2oudu")
+texture = ExtResource("8_kufru")
 
 [node name="MiniPirateShip2" type="Area2D" parent="Objects" unique_id=663156744 node_paths=PackedStringArray("sprite", "collision")]
 light_mask = 8
@@ -245,7 +245,7 @@ scale = Vector2(0.5, 0.5)
 disable_mode = 2
 collision_layer = 65
 collision_mask = 65
-script = ExtResource("11_me8p6")
+script = ExtResource("7_2eohi")
 speed = 32
 sprite = NodePath("Path2D/PathFollow2D/Sprite2D")
 collision = NodePath("CollisionShape2D")
@@ -272,7 +272,7 @@ texture_filter = 3
 position = Vector2(0.08885193, -0.1586628)
 rotation = -3.5081117
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("11_2oudu")
+texture = ExtResource("8_kufru")
 
 [node name="PShipSpawnPoint" type="Marker2D" parent="Objects" unique_id=1378407301]
 
@@ -281,19 +281,19 @@ light_mask = 12
 visibility_layer = 7
 texture_filter = 1
 position = Vector2(80, 72)
-texture = ExtResource("2_8eiwt")
+texture = ExtResource("9_vrl3m")
 
-[node name="Cannon" parent="Objects" unique_id=1524108360 instance=ExtResource("11_10i38")]
+[node name="Cannon" parent="Objects" unique_id=1524108360 instance=ExtResource("10_hqt7a")]
 position = Vector2(148, 39)
 rotation = -2.2052476
 
-[node name="Cannon2" parent="Objects" unique_id=1986418492 instance=ExtResource("11_10i38")]
+[node name="Cannon2" parent="Objects" unique_id=1986418492 instance=ExtResource("10_hqt7a")]
 position = Vector2(12, 39)
 rotation = 2.1991148
 
 [node name="RipperControl" type="RigidBody2D" parent="Objects" unique_id=399619787]
 visibility_layer = 2
-script = ExtResource("3_5wq1e")
+script = ExtResource("11_4hmf5")
 
 [node name="LeftFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=298857411]
 position = Vector2(43, 119)
@@ -304,7 +304,7 @@ freeze_mode = 1
 [node name="LFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/LeftFlipper" unique_id=784716824]
 texture_filter = 1
 position = Vector2(14, 6)
-texture = ExtResource("4_5wq1e")
+texture = ExtResource("12_n5312")
 
 [node name="LFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/LeftFlipper" unique_id=1733927101]
 position = Vector2(14, 7)
@@ -321,7 +321,7 @@ script = SubResource("GDScript_gqbix")
 [node name="RFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/RightFlipper" unique_id=1914170928]
 texture_filter = 1
 position = Vector2(-13, 6)
-texture = ExtResource("5_10i38")
+texture = ExtResource("13_cqmc7")
 
 [node name="RFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/RightFlipper" unique_id=1113150066]
 position = Vector2(-14, 7)
@@ -329,7 +329,7 @@ rotation = -1.9565141
 shape = SubResource("CapsuleShape2D_71pa8")
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=980725062]
-script = ExtResource("9_648fj")
+script = ExtResource("14_sik6s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=867956645]
 position = Vector2(82, 163)
@@ -360,17 +360,17 @@ shape = SubResource("RectangleShape2D_6dvry")
 [node name="WinCondBody" type="StaticBody2D" parent="." unique_id=754591651]
 position = Vector2(80, 8)
 physics_material_override = SubResource("PhysicsMaterial_6dvry")
-script = ExtResource("13_mqsht")
+script = ExtResource("15_1q3gk")
 
 [node name="RockSprite" type="Sprite2D" parent="WinCondBody" unique_id=610095767]
 texture_filter = 1
-texture = ExtResource("11_niyu1")
+texture = ExtResource("16_lxk4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinCondBody" unique_id=1622476793]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_wqb6v")
 
-[node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("11_s1d7x")]
+[node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("17_lyewn")]
 
 [connection signal="_destroyed" from="Objects/PirateShip" to="Objects/BallObject" method="_on_pirate_ship__destroyed"]
 [connection signal="body_entered" from="Objects/MiniPirateShip" to="Objects/BallObject" method="_on_mini_pirate_ship_body_entered"]

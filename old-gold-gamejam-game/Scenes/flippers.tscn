@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bypchtr7fepmt"]
 
-[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="1_wwn2e"]
-[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/level1Assets/sprite_leftflipper1.png" id="2_1dtqe"]
-[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/level1Assets/sprite_rightflipper1.png" id="3_ab4ah"]
+[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://Scripts/flipper_control.gd" id="1_dysie"]
+[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/level1Assets/sprite_leftflipper1.png" id="2_muu1u"]
+[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/level1Assets/sprite_rightflipper1.png" id="3_na87e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2hwn"]
 radius = 3.9082565
@@ -15,7 +15,7 @@ height = 30.457481
 [node name="Flippers" type="Node2D" unique_id=1425202270]
 
 [node name="RipperControl" type="RigidBody2D" parent="." unique_id=822559653]
-script = ExtResource("1_wwn2e")
+script = ExtResource("1_dysie")
 
 [node name="LeftFlipper" type="RigidBody2D" parent="RipperControl" unique_id=1880310016]
 position = Vector2(43, 118)
@@ -26,7 +26,7 @@ freeze_mode = 1
 [node name="LFlipperSprite" type="Sprite2D" parent="RipperControl/LeftFlipper" unique_id=68905515]
 texture_filter = 1
 position = Vector2(14, 6)
-texture = ExtResource("2_1dtqe")
+texture = ExtResource("2_muu1u")
 
 [node name="LFlipperCollision" type="CollisionShape2D" parent="RipperControl/LeftFlipper" unique_id=962281331]
 position = Vector2(15, 7)
@@ -42,7 +42,7 @@ freeze_mode = 1
 [node name="RFlipperSprite" type="Sprite2D" parent="RipperControl/RightFlipper" unique_id=1373243187]
 texture_filter = 1
 position = Vector2(-14, 6)
-texture = ExtResource("3_ab4ah")
+texture = ExtResource("3_na87e")
 
 [node name="RFlipperCollision" type="CollisionShape2D" parent="RipperControl/RightFlipper" unique_id=239800602]
 position = Vector2(-15, 7)

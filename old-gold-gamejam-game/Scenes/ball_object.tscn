@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4oxtcuxhv0a3"]
 
-[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://ball_object.gd" id="1_kkock"]
-[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/level1Assets/Sprite_Ball1.png" id="2_lnejc"]
+[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://Scripts/ball_object.gd" id="1_lgcwf"]
+[ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/level1Assets/Sprite_Ball1.png" id="2_jkpjm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g0h2p"]
 friction = 0.31
@@ -16,12 +16,12 @@ mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_g0h2p")
 gravity_scale = 1.915
 continuous_cd = 2
-script = ExtResource("1_kkock")
+script = ExtResource("1_lgcwf")
 
 [node name="BallSprite" type="Sprite2D" parent="." unique_id=1870503054]
 texture_filter = 1
 position = Vector2(102, 86)
-texture = ExtResource("2_lnejc")
+texture = ExtResource("2_jkpjm")
 
 [node name="BallCollision" type="CollisionShape2D" parent="." unique_id=1361964306]
 position = Vector2(102, 86)

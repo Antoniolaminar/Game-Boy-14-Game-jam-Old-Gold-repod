@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgcq7yyd7jp53"]
 
-[ext_resource type="Script" uid="uid://pg87yejj0ntq" path="res://bumper.gd" id="1_3kkrj"]
+[ext_resource type="Script" uid="uid://pg87yejj0ntq" path="res://Scripts/bumper.gd" id="1_3kkrj"]
 [ext_resource type="Texture2D" uid="uid://diqhp8jdpr3n2" path="res://assets/level1Assets/Sprite_leftbumper1.png" id="2_s473s"]
 [ext_resource type="Texture2D" uid="uid://cakwvo8ekvtyw" path="res://assets/level1Assets/sprite_rightbumper1.png" id="3_2j7ct"]
 

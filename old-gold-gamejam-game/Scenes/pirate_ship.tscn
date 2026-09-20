@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvvy4ov16rfpc"]
 
 [ext_resource type="Texture2D" uid="uid://rkq86bre1flu" path="res://assets/level1Assets/Sprite_Enemyship.png" id="1_30eky"]
-[ext_resource type="Script" uid="uid://br0sorsk4lwjr" path="res://pirate_ship.gd" id="1_ydudr"]
+[ext_resource type="Script" uid="uid://br0sorsk4lwjr" path="res://Scripts/pirate_ship.gd" id="1_ydudr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s473s"]
 size = Vector2(39.000015, 27.000008)

@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://dmlm08sox2x2h"]
 
-[ext_resource type="Texture2D" uid="uid://d0md3q6xs54nv" path="res://assets/level3Assets/background3.png" id="1_b5vbu"]
-[ext_resource type="Script" uid="uid://qli2sunudjfr" path="res://level.gd" id="1_qip1l"]
-[ext_resource type="Texture2D" uid="uid://rhepw3t88xfe" path="res://assets/level3Assets/Walls3.png" id="2_qip1l"]
-[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="3_qip1l"]
-[ext_resource type="Texture2D" uid="uid://yoo06v5gc7o2" path="res://assets/level3Assets/Sprite_Leftflipper3.png" id="4_of3b7"]
-[ext_resource type="Texture2D" uid="uid://b8ukfgixjkhr5" path="res://assets/level3Assets/Sprite_Rightflipper3.png" id="5_av5el"]
-[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://ball_object.gd" id="6_wivkl"]
-[ext_resource type="Texture2D" uid="uid://cn67sasi5qbmo" path="res://assets/level3Assets/Sprite_Ball3.png" id="7_wivkl"]
-[ext_resource type="Script" uid="uid://pg87yejj0ntq" path="res://bumper.gd" id="9_av5el"]
-[ext_resource type="Texture2D" uid="uid://c4in2gv7qroia" path="res://assets/level3Assets/sprite_rightbumper3.png" id="9_bsert"]
-[ext_resource type="Script" uid="uid://cetv3qamqobdv" path="res://death_zone.gd" id="9_ed3jy"]
-[ext_resource type="Texture2D" uid="uid://d041c51uoyqnj" path="res://assets/level3Assets/sprite_leftbumper3.png" id="10_ihj3p"]
-[ext_resource type="PackedScene" uid="uid://dm1alebgrxmah" path="res://music_player.tscn" id="11_iqarq"]
+[ext_resource type="Script" uid="uid://qli2sunudjfr" path="res://Scripts/level.gd" id="1_8t7r3"]
+[ext_resource type="Texture2D" uid="uid://d0md3q6xs54nv" path="res://assets/level3Assets/background3.png" id="2_ilf21"]
+[ext_resource type="Texture2D" uid="uid://rhepw3t88xfe" path="res://assets/level3Assets/Walls3.png" id="3_issuo"]
+[ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://Scripts/flipper_control.gd" id="4_g0sp5"]
+[ext_resource type="Texture2D" uid="uid://yoo06v5gc7o2" path="res://assets/level3Assets/Sprite_Leftflipper3.png" id="5_mawfg"]
+[ext_resource type="Texture2D" uid="uid://b8ukfgixjkhr5" path="res://assets/level3Assets/Sprite_Rightflipper3.png" id="6_20h2u"]
+[ext_resource type="Script" uid="uid://rcunbeviglku" path="res://Scripts/ball_object.gd" id="7_k5fwf"]
+[ext_resource type="Texture2D" uid="uid://cn67sasi5qbmo" path="res://assets/level3Assets/Sprite_Ball3.png" id="8_cwwwo"]
+[ext_resource type="Script" uid="uid://pg87yejj0ntq" path="res://Scripts/bumper.gd" id="9_leylw"]
+[ext_resource type="Texture2D" uid="uid://c4in2gv7qroia" path="res://assets/level3Assets/sprite_rightbumper3.png" id="10_b0jqi"]
+[ext_resource type="Texture2D" uid="uid://d041c51uoyqnj" path="res://assets/level3Assets/sprite_leftbumper3.png" id="11_ari7i"]
+[ext_resource type="Script" uid="uid://cetv3qamqobdv" path="res://Scripts/death_zone.gd" id="12_gkmg2"]
+[ext_resource type="PackedScene" uid="uid://dm1alebgrxmah" path="res://Scenes/music_player.tscn" id="13_vatik"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0t07s"]
 friction = 0.25
@@ -97,7 +97,7 @@ height = 11.245285
 size = Vector2(168.76218, 25.31472)
 
 [node name="Level" type="Node" unique_id=574883530]
-script = ExtResource("1_qip1l")
+script = ExtResource("1_8t7r3")
 
 [node name="LevelSolids" type="Node" parent="." unique_id=118106884]
 
@@ -107,12 +107,12 @@ physics_material_override = SubResource("PhysicsMaterial_0t07s")
 [node name="BackGroundSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=298641059]
 texture_filter = 1
 position = Vector2(80, 72)
-texture = ExtResource("1_b5vbu")
+texture = ExtResource("2_ilf21")
 
 [node name="WallsSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=414235990]
 texture_filter = 1
 position = Vector2(80, 72)
-texture = ExtResource("2_qip1l")
+texture = ExtResource("3_issuo")
 
 [node name="WallCollisions_1" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=413390267]
 position = Vector2(6, 19)
@@ -166,7 +166,7 @@ shape = SubResource("RectangleShape2D_dnl84")
 [node name="RipperControl" type="RigidBody2D" parent="Objects" unique_id=399619787]
 position = Vector2(-3, -10)
 scale = Vector2(1.1, 1.1)
-script = ExtResource("3_qip1l")
+script = ExtResource("4_g0sp5")
 
 [node name="LeftFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=298857411]
 position = Vector2(42.727272, 118.181816)
@@ -177,7 +177,7 @@ freeze_mode = 1
 [node name="LFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/LeftFlipper" unique_id=784716824]
 texture_filter = 1
 position = Vector2(14, 6)
-texture = ExtResource("4_of3b7")
+texture = ExtResource("5_mawfg")
 
 [node name="LFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/LeftFlipper" unique_id=1733927101]
 position = Vector2(14, 7)
@@ -194,7 +194,7 @@ script = SubResource("GDScript_gqbix")
 [node name="RFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/RightFlipper" unique_id=1914170928]
 texture_filter = 1
 position = Vector2(-14, 6)
-texture = ExtResource("5_av5el")
+texture = ExtResource("6_20h2u")
 
 [node name="RFlipperCollision" type="CollisionShape2D" parent="Objects/RipperControl/RightFlipper" unique_id=1113150066]
 position = Vector2(-14, 7)
@@ -209,12 +209,12 @@ mass = 12.0
 physics_material_override = SubResource("PhysicsMaterial_o6mmj")
 gravity_scale = 0.3
 lock_rotation = true
-script = ExtResource("6_wivkl")
+script = ExtResource("7_k5fwf")
 
 [node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
 texture_filter = 1
 position = Vector2(0, 1)
-texture = ExtResource("7_wivkl")
+texture = ExtResource("8_cwwwo")
 
 [node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
 position = Vector2(0, 1)
@@ -228,11 +228,11 @@ collision_layer = 9
 physics_material_override = SubResource("PhysicsMaterial_ed3jy")
 lock_rotation = true
 freeze = true
-script = ExtResource("9_av5el")
+script = ExtResource("9_leylw")
 
 [node name="RBumperSprite" type="Sprite2D" parent="Objects/Bumpers/BumperRight" unique_id=659338031]
 texture_filter = 1
-texture = ExtResource("9_bsert")
+texture = ExtResource("10_b0jqi")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Objects/Bumpers/BumperRight" unique_id=442046230]
 polygon = PackedVector2Array(4.69, -7.35, -4.845, 6.07, 5.05, 2.465)
@@ -250,11 +250,11 @@ collision_layer = 9
 physics_material_override = SubResource("PhysicsMaterial_iqarq")
 gravity_scale = -8.0
 freeze = true
-script = ExtResource("9_av5el")
+script = ExtResource("9_leylw")
 
 [node name="LBumperSprite" type="Sprite2D" parent="Objects/Bumpers/BumperLeft" unique_id=257272487]
 texture_filter = 1
-texture = ExtResource("10_ihj3p")
+texture = ExtResource("11_ari7i")
 
 [node name="LBumperCollision" type="CollisionPolygon2D" parent="Objects/Bumpers/BumperLeft" unique_id=40476367]
 polygon = PackedVector2Array(5.34, 6.085, -5.195, -7.545, -5.355, 2.67)
@@ -268,7 +268,7 @@ rotation = -0.67535126
 shape = SubResource("CapsuleShape2D_beu0r")
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=980725062]
-script = ExtResource("9_ed3jy")
+script = ExtResource("12_gkmg2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=867956645]
 position = Vector2(82, 163)
@@ -289,7 +289,7 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_sb2pt")
 debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
 
-[node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("11_iqarq")]
+[node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("13_vatik")]
 
 [connection signal="body_entered" from="Objects/Bumpers/BumperRight/RBumperHitbox" to="Objects/Bumpers/BumperRight" method="_on_body_entered_right"]
 [connection signal="body_entered" from="Objects/Bumpers/BumperLeft/LBumperHitbox" to="Objects/Bumpers/BumperLeft" method="_on_body_entered_left"]

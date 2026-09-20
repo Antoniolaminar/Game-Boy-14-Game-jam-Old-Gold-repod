@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://db3lruu2w77g4"]
 
-[ext_resource type="Script" uid="uid://e0ofnvuwep0j" path="res://pause_menu.gd" id="1_hdmo1"]
-[ext_resource type="FontFile" uid="uid://dehskx6ywim5u" path="res://Early GameBoy.ttf" id="2_nwcfo"]
+[ext_resource type="Script" uid="uid://e0ofnvuwep0j" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="FontFile" uid="uid://dehskx6ywim5u" path="res://Early GameBoy.ttf" id="2_1och7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0yrln"]
-font = ExtResource("2_nwcfo")
+font = ExtResource("2_1och7")
 font_size = 8
 
 [node name="PauseMenu" type="Control" unique_id=575137758]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_hdmo1")
+script = ExtResource("1_k0w1u")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=12693934]
 
