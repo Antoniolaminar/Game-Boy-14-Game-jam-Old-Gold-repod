@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diqhp8jdpr3n2"
-path="res://.godot/imported/Sprite_leftbumper1.png-8f80c163dd953e70f15f50ea825e16c7.ctex"
+uid="uid://c2546qkba0h2g"
+path="res://.godot/imported/backgroundtile1.png-f24023d692e6f1487e2af39476759c4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/level1Assets/Sprite_leftbumper1.png"
-dest_files=["res://.godot/imported/Sprite_leftbumper1.png-8f80c163dd953e70f15f50ea825e16c7.ctex"]
+source_file="res://assets/level1Assets/backgroundtile1.png"
+dest_files=["res://.godot/imported/backgroundtile1.png-f24023d692e6f1487e2af39476759c4d.ctex"]
 
 [params]
 

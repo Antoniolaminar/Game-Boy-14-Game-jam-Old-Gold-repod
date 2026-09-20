@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dowqc3b2k1y7w"]
+
+[ext_resource type="Script" uid="uid://dn65xpyi4l6vf" path="res://cannon.gd" id="1_23j6s"]
+[ext_resource type="Texture2D" uid="uid://bhunvqj1gomv8" path="res://assets/level1Assets/sprite_cannon1.png" id="2_72ky0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cx6gv"]
+radius = 17.029387
+
+[node name="Cannon" type="StaticBody2D" unique_id=1524108360]
+position = Vector2(79, 77)
+script = ExtResource("1_23j6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2041658615]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_cx6gv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1410563531]
+texture = ExtResource("2_72ky0")

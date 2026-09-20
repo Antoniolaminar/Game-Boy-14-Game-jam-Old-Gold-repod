@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvvy4ov16rfpc"]
 
-[ext_resource type="Texture2D" uid="uid://rkq86bre1flu" path="res://assets/sprites/level1Assets/Sprite_Enemyship.png" id="1_30eky"]
+[ext_resource type="Texture2D" uid="uid://rkq86bre1flu" path="res://assets/level1Assets/Sprite_Enemyship.png" id="1_30eky"]
 [ext_resource type="Script" uid="uid://br0sorsk4lwjr" path="res://pirate_ship.gd" id="1_ydudr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s473s"]
@@ -25,3 +25,6 @@ texture = ExtResource("1_30eky")
 curve = SubResource("Curve2D_ydudr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1838913094]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

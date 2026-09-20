@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rkq86bre1flu"
-path="res://.godot/imported/Sprite_Enemyship.png-0168555ddf3e115d09616db613120c90.ctex"
+uid="uid://dm58p34ljd5ue"
+path="res://.godot/imported/Sprite_Hole2.png-2e82e46b95966d84e326a5d7d76d65cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/level1Assets/Sprite_Enemyship.png"
-dest_files=["res://.godot/imported/Sprite_Enemyship.png-0168555ddf3e115d09616db613120c90.ctex"]
+source_file="res://assets/level2Assets/Sprite_Hole2.png"
+dest_files=["res://.godot/imported/Sprite_Hole2.png-2e82e46b95966d84e326a5d7d76d65cf.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6sgm2ie0n5yt"
-path="res://.godot/imported/sprite_leftflipper1.png-33c2f9740860fe5ce54937e5e53781ff.ctex"
+uid="uid://cvyuvmvydng46"
+path="res://.godot/imported/sprite_rockwall1.png-719a14dce8e785cbe11fca6e2897d912.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/level1Assets/sprite_leftflipper1.png"
-dest_files=["res://.godot/imported/sprite_leftflipper1.png-33c2f9740860fe5ce54937e5e53781ff.ctex"]
+source_file="res://assets/level1Assets/sprite_rockwall1.png"
+dest_files=["res://.godot/imported/sprite_rockwall1.png-719a14dce8e785cbe11fca6e2897d912.ctex"]
 
 [params]
 

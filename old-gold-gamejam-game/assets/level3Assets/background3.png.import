@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvb2pwowyv25y"
-path="res://.godot/imported/Sprite_Ball1.png-c90363c706d16f293188932214d02af7.ctex"
+uid="uid://d0md3q6xs54nv"
+path="res://.godot/imported/background3.png-40604300f2461ff7ce26d009af4d7923.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/level1Assets/Sprite_Ball1.png"
-dest_files=["res://.godot/imported/Sprite_Ball1.png-c90363c706d16f293188932214d02af7.ctex"]
+source_file="res://assets/level3Assets/background3.png"
+dest_files=["res://.godot/imported/background3.png-40604300f2461ff7ce26d009af4d7923.ctex"]
 
 [params]
 

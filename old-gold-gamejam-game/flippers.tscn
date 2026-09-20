@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bypchtr7fepmt"]
 
 [ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="1_wwn2e"]
-[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/sprites/level1Assets/sprite_leftflipper1.png" id="2_1dtqe"]
-[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/sprites/level1Assets/sprite_rightflipper1.png" id="3_ab4ah"]
+[ext_resource type="Texture2D" uid="uid://c6sgm2ie0n5yt" path="res://assets/level1Assets/sprite_leftflipper1.png" id="2_1dtqe"]
+[ext_resource type="Texture2D" uid="uid://bh6ix77yv8uj7" path="res://assets/level1Assets/sprite_rightflipper1.png" id="3_ab4ah"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2hwn"]
 radius = 3.9082565

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cphe445dbj3mq"
-path="res://.godot/imported/Walls1.png-f4719bf97f8d43116981709e52d479d1.ctex"
+uid="uid://c6sgm2ie0n5yt"
+path="res://.godot/imported/sprite_leftflipper1.png-c4b373e9ccc24f34f018b9737cc0c291.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/level1Assets/Walls1.png"
-dest_files=["res://.godot/imported/Walls1.png-f4719bf97f8d43116981709e52d479d1.ctex"]
+source_file="res://assets/level1Assets/sprite_leftflipper1.png"
+dest_files=["res://.godot/imported/sprite_leftflipper1.png-c4b373e9ccc24f34f018b9737cc0c291.ctex"]
 
 [params]
 

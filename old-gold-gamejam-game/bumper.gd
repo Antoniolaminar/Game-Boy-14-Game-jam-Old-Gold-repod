@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 func _on_body_entered_left(body: Node) -> void:
 	if (body as BallObject):
 		bump_visu($LBumperSprite)
-		var current_velocity = Vector2(body.linear_velocity.x,body.linear_velocity.y)
+		#var current_velocity = Vector2(body.linear_velocity.x,body.linear_velocity.y)
 		var bounce_vector_left = Vector2(1300.5,-2200.0)
 		body.apply_central_impulse(bounce_vector_left)
 	pass # Replace with function body.
@@ -27,7 +27,7 @@ func _on_body_entered_left(body: Node) -> void:
 func _on_body_entered_right(body: Node) -> void:
 	if (body as BallObject):
 		bump_visu($RBumperSprite)
-		var current_velocity = Vector2(body.linear_velocity.x,body.linear_velocity.y)
+		#var current_velocity = Vector2(body.linear_velocity.x,body.linear_velocity.y)
 		var bounce_vector_left = Vector2(-1300.5,-2200.0)
 		body.apply_central_impulse(bounce_vector_left)
 	pass # Replace with function body.
