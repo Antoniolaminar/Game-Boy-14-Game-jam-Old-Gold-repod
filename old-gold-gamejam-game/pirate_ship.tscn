@@ -13,9 +13,12 @@ _data = {
 }
 point_count = 7
 
-[node name="PirateShip" type="Area2D" unique_id=591132309]
-position = Vector2(183, 39)
+[node name="PirateShip" type="Area2D" unique_id=591132309 node_paths=PackedStringArray("sprite", "collision")]
+collision_layer = 65
+collision_mask = 65
 script = ExtResource("1_ydudr")
+sprite = NodePath("Path2D/PathFollow2D/Sprite2D")
+collision = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=100004146]
 position = Vector2(1.1920929e-07, -2.3841858e-07)
@@ -44,4 +47,3 @@ scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("1_30eky")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

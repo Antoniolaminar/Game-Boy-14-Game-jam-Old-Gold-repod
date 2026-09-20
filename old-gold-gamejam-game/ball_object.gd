@@ -4,6 +4,7 @@ extends RigidBody2D
 
 var spawn_vector = Vector2(80, 40)
 var dead_ball = false
+var in_cannon = false
 
 var entry_velocity = 0.0
 
@@ -15,6 +16,10 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	pass
+
+func _entered_cannon_zone(body: Node2D) -> void:
+	if(body as BallObject):
+		in_cannon = true
 
 func _on_death_zone_body_exited(body: Node2D) -> void:
 	#fazer animacao depois so respawnar por enquanto
@@ -34,5 +39,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.angular_velocity = 0.0
 		dead_ball = false
 	
-	#if (cannon_action)
+	if (in_cannon):
+		print("pingas")
 		

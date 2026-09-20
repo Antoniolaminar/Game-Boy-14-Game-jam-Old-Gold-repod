@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dm1alebgrxmah" path="res://music_player.tscn" id="11_s2ivx"]
 [ext_resource type="Texture2D" uid="uid://ce3dr1ava1bcv" path="res://assets/level2Assets/Sprite_Leftbumper2.png" id="12_fpsgj"]
 [ext_resource type="Texture2D" uid="uid://wvc6yas1mrwy" path="res://assets/level2Assets/Sprite_Rightbumper2.png" id="13_hlua3"]
+[ext_resource type="Texture2D" uid="uid://dj5jc5jyomkb" path="res://assets/level2Assets/Sprite_roundbumper2.png" id="15_hlua3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0t07s"]
 friction = 0.25
@@ -54,6 +55,13 @@ size = Vector2(24.920607, 7.193163)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyngc"]
 size = Vector2(6.5, 24)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o6mmj"]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cx6gv"]
+radius = 8.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05x41"]
 radius = 4.082344
 height = 30.36
@@ -61,13 +69,6 @@ height = 30.36
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71pa8"]
 radius = 4.0823364
 height = 30.46
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o6mmj"]
-friction = 0.0
-bounce = 0.1
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cx6gv"]
-radius = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb2pt"]
 size = Vector2(168.76218, 25.31472)
@@ -94,6 +95,12 @@ bounce = 0.3
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tccyq"]
 radius = 0.5842743
 height = 9.998108
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hlua3"]
+bounce = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0yrln"]
+radius = 6.5
 
 [node name="Level" type="Node" unique_id=574883530]
 script = ExtResource("1_fpsgj")
@@ -170,6 +177,25 @@ shape = SubResource("RectangleShape2D_jyngc")
 
 [node name="Objects" type="Node" parent="." unique_id=1526000305]
 
+[node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
+position = Vector2(17, 94)
+collision_layer = 3
+collision_mask = 3
+mass = 12.0
+physics_material_override = SubResource("PhysicsMaterial_o6mmj")
+gravity_scale = 0.3
+lock_rotation = true
+script = ExtResource("6_fyupn")
+
+[node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("7_shxk2")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_cx6gv")
+
 [node name="RipperControl" type="RigidBody2D" parent="Objects" unique_id=399619787]
 position = Vector2(0, 8)
 script = ExtResource("3_shxk2")
@@ -205,25 +231,6 @@ texture = ExtResource("5_2m3fi")
 position = Vector2(-14, 7)
 rotation = -1.9565141
 shape = SubResource("CapsuleShape2D_71pa8")
-
-[node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
-position = Vector2(17, 94)
-collision_layer = 3
-collision_mask = 3
-mass = 12.0
-physics_material_override = SubResource("PhysicsMaterial_o6mmj")
-gravity_scale = 0.3
-lock_rotation = true
-script = ExtResource("6_fyupn")
-
-[node name="BallSprite" type="Sprite2D" parent="Objects/BallObject" unique_id=22759566]
-texture_filter = 1
-position = Vector2(0, 1)
-texture = ExtResource("7_shxk2")
-
-[node name="BallCollision" type="CollisionShape2D" parent="Objects/BallObject" unique_id=1378425564]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_cx6gv")
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=980725062]
 script = ExtResource("9_tccyq")
@@ -314,6 +321,28 @@ rotation = -2.5176167
 shape = SubResource("CapsuleShape2D_tccyq")
 
 [node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("11_s2ivx")]
+
+[node name="StaticBumper" type="StaticBody2D" parent="." unique_id=774618125]
+position = Vector2(23, 31)
+physics_material_override = SubResource("PhysicsMaterial_hlua3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBumper" unique_id=873942583]
+texture_filter = 1
+texture = ExtResource("15_hlua3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBumper" unique_id=1330550548]
+shape = SubResource("CircleShape2D_0yrln")
+
+[node name="StaticBumper2" type="StaticBody2D" parent="." unique_id=742572578]
+position = Vector2(138, 31)
+physics_material_override = SubResource("PhysicsMaterial_hlua3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBumper2" unique_id=707798782]
+texture_filter = 1
+texture = ExtResource("15_hlua3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBumper2" unique_id=1559254004]
+shape = SubResource("CircleShape2D_0yrln")
 
 [connection signal="body_entered" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_entered"]
 [connection signal="body_exited" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_exited"]
