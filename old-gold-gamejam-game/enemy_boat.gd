@@ -42,7 +42,7 @@ func _destroy_boat() -> void:
 	is_destroyed = true
 	collision.set_deferred("disabled", true)
 	#adicionar pontos
-	await get_tree().create_timer(1.3).timeout
+	await get_tree().create_timer(1.8).timeout
 	
 	_respawn_boat()
 	pass
