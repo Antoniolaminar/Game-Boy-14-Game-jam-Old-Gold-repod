@@ -16,24 +16,24 @@ func _physics_process(delta: float) -> void:
 		#Action de fazer o flipper levantar com threshold para poder ou nao
 		#conduzir o input (segundo elif) @requires rotaion_right_value != null
 		if rotation_right_value > 30:
-			rotation_right_value += 500 * delta
+			rotation_right_value += 290 * delta
 		elif rotation_right_value <= 30:
 			rotation_right_value = 30
 	#recolocar o flipper na sua posicao original apos o input
 	else:
 		if rotation_right_value > 0:
-			rotation_right_value -= 500 * delta
+			rotation_right_value -= 290 * delta
 		elif rotation_right_value <= 0:
 			rotation_right_value = 0
 	
 	if (Input.is_action_pressed("Flipper_Action_Left") && free_ball):
 		if rotation_left_value < -30:
-			rotation_left_value -= 500 * delta
+			rotation_left_value -= 290 * delta
 		elif rotation_left_value >= -30:
 			rotation_left_value = -30
 	else:
 		if rotation_left_value < 0:
-			rotation_left_value += 500 * delta
+			rotation_left_value += 290 * delta
 		elif rotation_left_value >= 0:
 			rotation_left_value = 0
 	

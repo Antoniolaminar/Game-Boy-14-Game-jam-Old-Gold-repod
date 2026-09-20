@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qli2sunudjfr" path="res://level.gd" id="1_fpsgj"]
 [ext_resource type="Texture2D" uid="uid://bieuxlnkfhi84" path="res://assets/level2Assets/Background2.png" id="1_mgfv4"]
-[ext_resource type="Texture2D" uid="uid://cphe445dbj3mq" path="res://assets/level1Assets/Walls1.png" id="2_2m3fi"]
+[ext_resource type="Texture2D" uid="uid://c8yaxn26svy7s" path="res://assets/level2Assets/walls2.png" id="3_fpsgj"]
 [ext_resource type="Script" uid="uid://cqv7u5fnd36vr" path="res://flipper_control.gd" id="3_shxk2"]
 [ext_resource type="Texture2D" uid="uid://b2k23c0tcphp4" path="res://assets/level2Assets/Sprite_Leftflipper2.png" id="4_mgfv4"]
 [ext_resource type="Texture2D" uid="uid://belc2mnvappm7" path="res://assets/level2Assets/Sprite_Rightflipper2.png" id="5_2m3fi"]
@@ -38,7 +38,7 @@ size = Vector2(8, 124)
 size = Vector2(8, 121)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yrln"]
-radius = 2.5
+radius = 2.0
 height = 22.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cx6gv"]
@@ -49,25 +49,14 @@ height = 24.0
 size = Vector2(24.363447, 6.3736773)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnl84"]
-size = Vector2(24.920607, 7.3419228)
+size = Vector2(24.920607, 7.193163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyngc"]
+size = Vector2(6.5, 24)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05x41"]
 radius = 4.082344
 height = 30.36
-
-[sub_resource type="GDScript" id="GDScript_gqbix"]
-script/source = "extends RigidBody2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71pa8"]
 radius = 4.0823364
@@ -90,7 +79,7 @@ size = Vector2(62, 20)
 rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqb6v"]
-size = Vector2(50, 13)
+size = Vector2(38, 27)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fyupn"]
 bounce = 0.3
@@ -122,25 +111,25 @@ texture = ExtResource("1_mgfv4")
 [node name="WallsSprite" type="Sprite2D" parent="LevelSolids/Level1_OceanWalls" unique_id=414235990]
 texture_filter = 1
 position = Vector2(80, 72)
-texture = ExtResource("2_2m3fi")
+texture = ExtResource("3_fpsgj")
 
 [node name="WallCollisions_1" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=413390267]
-position = Vector2(6, 19)
-rotation = -0.01456245
+position = Vector2(8, 23)
+rotation = 0.025657836
 shape = SubResource("SegmentShape2D_0yrln")
 
 [node name="WallCollisions_2" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=273275373]
-position = Vector2(153.00002, 124.99999)
-rotation = 0.05339971
+position = Vector2(154.99998, 127)
+rotation = -0.012704305
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("SegmentShape2D_cx6gv")
 
 [node name="WallCollisions_3" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=107477987]
-position = Vector2(28.5, 5)
+position = Vector2(34, 11)
 shape = SubResource("RectangleShape2D_0yrln")
 
 [node name="WallCollisions_4" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1525063124]
-position = Vector2(132, 5)
+position = Vector2(129, 11)
 shape = SubResource("RectangleShape2D_cx6gv")
 
 [node name="WallCollisions_5" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1247278120]
@@ -152,32 +141,41 @@ position = Vector2(156, 66.5)
 shape = SubResource("RectangleShape2D_ub8mp")
 
 [node name="WallCollisions_7" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=830069478]
-position = Vector2(27, 100)
+position = Vector2(27, 108)
 shape = SubResource("CapsuleShape2D_0yrln")
 
 [node name="WallCollisions_8" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=2073447926]
-position = Vector2(133, 102)
+position = Vector2(133, 108)
 shape = SubResource("CapsuleShape2D_cx6gv")
 
 [node name="WallCollisions_9" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=104291545]
-position = Vector2(36.999992, 114.99999)
+position = Vector2(37, 122.00001)
 rotation = 0.43745753
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_st0ao")
 
 [node name="WallCollisions_10" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1468647492]
-position = Vector2(121.00001, 117)
+position = Vector2(120.964745, 122.934494)
 rotation = -0.49378046
 scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("RectangleShape2D_dnl84")
 
+[node name="WallCollisions_11" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=1805777271]
+position = Vector2(103, 27)
+shape = SubResource("RectangleShape2D_jyngc")
+
+[node name="WallCollisions_12" type="CollisionShape2D" parent="LevelSolids/Level1_OceanWalls" unique_id=917900970]
+position = Vector2(57.75, 27)
+shape = SubResource("RectangleShape2D_jyngc")
+
 [node name="Objects" type="Node" parent="." unique_id=1526000305]
 
 [node name="RipperControl" type="RigidBody2D" parent="Objects" unique_id=399619787]
+position = Vector2(0, 8)
 script = ExtResource("3_shxk2")
 
 [node name="LeftFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=298857411]
-position = Vector2(43, 118)
+position = Vector2(42, 117)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
@@ -193,11 +191,10 @@ rotation = 1.9565141
 shape = SubResource("CapsuleShape2D_05x41")
 
 [node name="RightFlipper" type="RigidBody2D" parent="Objects/RipperControl" unique_id=816567941]
-position = Vector2(118, 118)
+position = Vector2(118, 117)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
-script = SubResource("GDScript_gqbix")
 
 [node name="RFlipperSprite" type="Sprite2D" parent="Objects/RipperControl/RightFlipper" unique_id=1914170928]
 texture_filter = 1
@@ -210,7 +207,7 @@ rotation = -1.9565141
 shape = SubResource("CapsuleShape2D_71pa8")
 
 [node name="BallObject" type="RigidBody2D" parent="Objects" unique_id=203956231]
-position = Vector2(104, 56)
+position = Vector2(17, 94)
 collision_layer = 3
 collision_mask = 3
 mass = 12.0
@@ -232,19 +229,19 @@ shape = SubResource("CircleShape2D_cx6gv")
 script = ExtResource("9_tccyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=867956645]
-position = Vector2(82, 163)
+position = Vector2(80, 175)
 shape = SubResource("RectangleShape2D_sb2pt")
 debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone" unique_id=133247536]
-position = Vector2(-13.92512, 81.3849)
+position = Vector2(-25.999998, 74.99999)
 rotation = 1.5794878
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_sb2pt")
 debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZone" unique_id=892127562]
-position = Vector2(174.00002, 79)
+position = Vector2(187, 76)
 rotation = 1.5794878
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_sb2pt")
@@ -258,7 +255,7 @@ position = Vector2(79, -10)
 shape = SubResource("RectangleShape2D_6dvry")
 
 [node name="RockDoorBody" type="StaticBody2D" parent="." unique_id=754591651]
-position = Vector2(80, 8)
+position = Vector2(79, 16)
 physics_material_override = SubResource("PhysicsMaterial_6dvry")
 
 [node name="RockSprite" type="Sprite2D" parent="RockDoorBody" unique_id=610095767]
@@ -266,10 +263,8 @@ texture_filter = 1
 texture = ExtResource("10_2m3fi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RockDoorBody" unique_id=1622476793]
-position = Vector2(0, -3.5)
+position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_wqb6v")
-
-[node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("11_s2ivx")]
 
 [node name="Bumpers" type="Node2D" parent="." unique_id=1294456164]
 
@@ -317,6 +312,8 @@ polygon = PackedVector2Array(4.69, -7.35, -4.845, 6.07, 5.05, 2.465)
 position = Vector2(0, -2)
 rotation = -2.5176167
 shape = SubResource("CapsuleShape2D_tccyq")
+
+[node name="MusicPlayer" parent="." unique_id=378841087 instance=ExtResource("11_s2ivx")]
 
 [connection signal="body_entered" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_entered"]
 [connection signal="body_exited" from="DeathZone" to="Objects/BallObject" method="_on_death_zone_body_exited"]

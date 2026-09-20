@@ -4,14 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://cvb2pwowyv25y" path="res://assets/level1Assets/Sprite_Ball1.png" id="2_lnejc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g0h2p"]
-friction = 0.2
+friction = 0.31
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibfpi"]
 radius = 8.0
 
 [node name="BallObject" type="RigidBody2D" unique_id=115346264]
-mass = 17.0
+mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_g0h2p")
+gravity_scale = 1.915
 script = ExtResource("1_kkock")
 
 [node name="BallSprite" type="Sprite2D" parent="." unique_id=1870503054]
